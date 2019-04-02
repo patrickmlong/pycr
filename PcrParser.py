@@ -16,9 +16,13 @@ class PcrParser(object):
         
     
     def input_table(self, file_name):
-        self.rt_table = \
-        os.path.join(os.path.normpath(self.file_path,
-                                      elf.file_name))
+        try:
+        	self.rt_table = \
+        	os.path.join(os.path.normpath(self.file_path,
+                                     file_name))
+        except OSError:
+        	print("File {} not found".format(file_name))
+        	
         self.rt_table = \
         self.rt_table.loc[:,["sample", "Cq Mean"]]
         
