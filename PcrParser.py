@@ -28,7 +28,22 @@ class PcrParser(object):
         
       
     def format_table(self):
-        pass
+    	self.rt_table["delta_ct"] = \
+    	self.rt_table.target - self.rt_table.normalizer
+    	self.rt_table["expression"] = \
+    	2 ** self.rt_table.delta_ct
+    	self.rt_table
+    	
+    	avg_control = \
+    	self.rt_table[self.rt_table.group == "control"].mean()
+    	avg_control = self.rt_table.loc[:.['control'].mean()
+    	avg_exp = \
+    	self.rt_table[self.rt_table.group == "experimental"].mean()
+    	self.rt_table["average"] = self.rt_table.apply(lambda x: \
+    	 avg_control if x == "control" else avg_exp)
+    	self.rt_table["percent_average"] = \ 
+    	(self.rt_table.expression * self.rt_table.average) *  100
+    	 
     
     def visualize_rt(self):
         pass
