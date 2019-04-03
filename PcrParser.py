@@ -24,7 +24,7 @@ class PcrParser(object):
         	print("File {} not found".format(file_name))
         	
         self.rt_table = \
-        self.rt_table.loc[:,["sample", "Cq Mean"]]
+        self.rt_table.loc[:,["treatment", "Cq Mean"]]
         
       
     def format_table(self):
@@ -50,8 +50,9 @@ class PcrParser(object):
     def visualize_rt(self):
         pass
     
-    def save_table_to_csv(self):
-        pass
+    def save_table_to_csv(self, file_name):
+        self.rt_table.to_csv(os.pathjoin(os. \
+        path.normpath(self.file_path, file_name)), ndex = False)
         
         
     
