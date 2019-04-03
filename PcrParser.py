@@ -52,7 +52,7 @@ class PcrParser(object):
     
     def save_table_to_csv(self, file_name):
         self.rt_table.to_csv(os.pathjoin(os. \
-        path.normpath(self.file_path, file_name)), ndex = False)
+        path.normpath(self.file_path, file_name)), index = False)
         
         
     
