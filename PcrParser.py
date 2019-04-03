@@ -34,7 +34,6 @@ class PcrParser(object):
     	
     	self.rt_table["expression"] = \
     	2 ** self.rt_table.delta_ct
-    	self.rt_table
     	
     	avg_control = \
     	self.rt_table[self.rt_table.group == "control"].mean()
