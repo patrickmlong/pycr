@@ -35,13 +35,13 @@ class PcrParser(object):
     	self.rt_table["expression"] = \
     	2 ** self.rt_table.delta_ct
     	
-    	avg_control = \
-    	self.rt_table[self.rt_table.group == "control"].mean()
-    	avg_exp = \
-    	self.rt_table[self.rt_table.group == "experimental"].mean()
+    	avg_negative = \
+    	self.rt_table[self.rt_table.group == self.neg_group].mean()
+    	avg_positive = \
+    	self.rt_table[self.rt_table.group == self.positive_group].mean()
     	
     	self.rt_table["average"] = self.rt_table.apply(lambda x: \
-    	 avg_control if x == "control" else avg_exp)
+    	 avg_negative if x == self.neg_group else avg_positive)
     	
     	self.rt_table["percent_average"] = \ 
     	(self.rt_table.expression * self.rt_table.average) *  100
