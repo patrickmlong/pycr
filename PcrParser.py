@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 import os
 
 class PcrParser(object):
@@ -48,9 +49,15 @@ class PcrParser(object):
     	 
     
     def visualize_rt(self):
-        pass
+    
+    	sns.set(style="whitegrid")
+    	
+    	sns.boxplot(x = "group", y =  "percent_average",
+    	            data = self.rt_table)
+
     
     def save_table_to_csv(self, file_name):
+    
         self.rt_table.to_csv(os.pathjoin(os. \
         path.normpath(self.file_path, file_name)), index = False)
         
