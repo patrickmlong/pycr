@@ -45,12 +45,12 @@ class PcrParser(object):
     	 avg_negative if x == self.neg_group else avg_positive)
     	
     	self.rt_table["percent_average"] = \ 
-    	(self.rt_table.expression * self.rt_table.average) *  100
+    	(self.rt_table.expression / self.rt_table.average) *  100
     	 
     
     def visualize_rt(self):
     
-    	sns.set(style="whitegrid")
+    	sns.set(style = "whitegrid")
     	
     	sns.boxplot(x = "group", y =  "percent_average",
     	            data = self.rt_table)
