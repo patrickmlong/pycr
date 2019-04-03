@@ -24,7 +24,7 @@ class PcrParser(object):
         	print("File {} not found".format(file_name))
         	
         self.rt_table = \
-        self.rt_table.loc[:,["treatment", "Cq Mean"]]
+        self.rt_table.loc[:,["group", "target", "normalizer"]]
         
       
     def format_table(self):
