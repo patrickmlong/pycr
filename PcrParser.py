@@ -31,7 +31,7 @@ class PcrParser(object):
         	self.rt_table.loc[:,["group", "target", "normalizer"]]
         	
         except:
-              print("Columns: "group, target, an/or normalizer" not in table " \
+              print("Columns: group, target, an/or normalizer not in table " \
                "columns: {}".format(self.rt_table.columns))
                import pdb; pdb.set_trace()
                   
