@@ -23,10 +23,17 @@ class PcrParser(object):
                                      file_name))
         except OSError:
         	print("File {} not found".format(file_name))
+        	import pdb; pdb.set_trace()
         	
-        self.rt_table = \
-        self.rt_table.loc[:,["group", "target", "normalizer"]]
-        
+        try:
+        	self.rt_table = \
+        	self.rt_table.loc[:,["group", "target", "normalizer"]]
+        	
+        except:
+              print("Columns: "group, target, an/or normalizer" not in table " \
+               "columns: {}".format(self.rt_table.columns))
+               import pdb; pdb.set_trace()
+                  
       
     def format_table(self):
     	
