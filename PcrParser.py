@@ -5,8 +5,8 @@ import os
 
 class PcrParser(object):
     """
-    The PcrParser class create an RT-PCR analysis
-    pipeline to automate the analysis of relative mRNA levels.
+    The PcrParser class creates an RT-PCR analysis
+    pipeline to automate relative measurements of RNA.
     Expression is calculated using the delta Ct method.  
     """
     
