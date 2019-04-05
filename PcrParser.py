@@ -6,7 +6,7 @@ import os
 class PcrParser(object):
     """
     The PcrParser class creates an RT-PCR analysis
-    pipeline to automate relative measurements of RNA.
+    pipeline to automate of relative mRNA levels.
     Expression is calculated using the delta Ct method.  
     """
     
@@ -27,13 +27,13 @@ class PcrParser(object):
         	import pdb; pdb.set_trace()
         	
         try:
-        	self.rt_table = \
+			self.rt_table = \
         	self.rt_table.loc[:,["group", "target", "normalizer"]]
         	
         except:
-              print("Columns: group, target, an/or normalizer not in table " \
+			print("Columns: group, target, an/or normalizer not in table " \
                "columns: {}".format(self.rt_table.columns))
-               import pdb; pdb.set_trace()
+			import pdb; pdb.set_trace()
                   
       
     def format_table(self):
@@ -52,7 +52,7 @@ class PcrParser(object):
     	self.rt_table["average"] = self.rt_table.apply(lambda x: \
     	 avg_negative if x == self.neg_group else avg_positive)
     	
-    	self.rt_table["percent_average"] = \ 
+    	self.rt_table["percent_average"] = \
     	(self.rt_table.expression / self.rt_table.average) *  100
     	 
     

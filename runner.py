@@ -1,5 +1,5 @@
 import argparse
-from pycr import PcrParser
+import PcrParser
 
 
 def Main():
@@ -28,9 +28,7 @@ def Main():
 	
 	args = parser.parse_args()
 	
-	rna_parser = PcrParser(args.file_path,
-						   args.pos_group, 
-						   args.neg_group)
+	rna_parser = PcrParser(args.file_path,args.pos_group, args.neg_group)
 						   
 	input_table = rna_parser.input_table(args.file_name)
 	
