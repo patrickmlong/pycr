@@ -5,9 +5,9 @@ import os
 
 class PcrParser(object):
     """
-    The PcrParser class creates an RT-PCR analysis
-    pipeline to automate of relative mRNA levels.
-    Expression is calculated using the delta Ct method.  
+    The PcrParser class creates a pipeline to automate  
+    the analysis of RNA levels detected by RT-PCR.
+    RNA expression is calculated using the delta Ct method.  
     """
     
     def __init__(self, file_path, pos_group, neg_group):
