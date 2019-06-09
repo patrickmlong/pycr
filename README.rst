@@ -3,13 +3,12 @@ pycr
 ====
 
 
-Add a short description here!
+A package to automate quantitative PCR analysis. 
 
 
 Description
 ===========
 
-A longer description of your project goes here...
 
 
 Note
