@@ -4,7 +4,7 @@ pycr
 
 
 A package to automate quantitative PCR analysis. 
-This package uses argparse and has the following entry points.
+This package uses argparse and has the following entry points::
 
 
 positional arguments
