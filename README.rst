@@ -8,7 +8,7 @@ A package to automate quantitative PCR analysis.
 
 Description
 ===========
-::
+
 runner.py [-h] file_path file_name pos_group neg_group output_file_name
 
 positional arguments:
