@@ -3,7 +3,7 @@ pycr
 ====
 
 
-A package to automate quantitative PCR analysis. 
+A package to automate quantitative PCR analysis for delta CT mRNA quantification. 
 
 This package uses argparse with the following entry points::
 
