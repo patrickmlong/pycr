@@ -5,28 +5,26 @@ import PcrParser
 def Main():
 	parser = argparse.ArgumentParser()
 	parser.add_argument("file_path", 
-	help = "the path to your raw rna ct data csv file for relative expression analysis",
+	help = "the path to your raw rna CT data csv file for delta CT RNA level analysis",
 	type = str)
 	
-	parser = argparse.ArgumentParser()
-	
-	parser.add_argument("file_name", 
-	help = "The name of your raw rna ct data csv file for relative expression analysis",
+	parser.add_argument("input_file_name", 
+	help = "your raw rna ct data csv file for delta CT RNA level analysis",
 	type = str)
 	
-	parser.add_argument("pos_group", 
-	help = "The name of your positive experimental group",
+	parser.add_argument("experimental",
+	help = "The name of your experimental group",
 	type = str)
 	
-	parser.add_argument("neg_group", 
-	help = "The name of your negative experimental group",
+	parser.add_argument("control",
+	help = "The name of your control group",
 	type = str)
 	
-	parser = argparse.ArgumentParser()
 	parser.add_argument("output_file_name", 
-	help = "The name of your raw rna ct data csv file for relative expression analysis",
+	help = "csv file name for RNA analysis results",
 	type = str)
 	
+    # Run pycr using arguments
 	args = parser.parse_args()
 	
 	rna_parser = PcrParser(args.file_path,args.pos_group, args.neg_group)

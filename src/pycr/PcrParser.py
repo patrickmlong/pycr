@@ -10,10 +10,10 @@ class PcrParser(object):
     RNA expression is calculated using the delta Ct method.  
     """
     
-    def __init__(self, file_path, pos_group, neg_group):
+    def __init__(self, file_path, experimental, control):
         self.file_path = file_path
-        self.pos_group = pos_group
-        self.neg_group = neg_group
+        self.experimental = experimental
+        self.control = control
         self.rt_table = pd.DataFrame()
         
     
@@ -44,13 +44,13 @@ class PcrParser(object):
     	self.rt_table["expression"] = \
     	2 ** self.rt_table.delta_ct
     	
-    	avg_negative = \
-    	self.rt_table[self.rt_table.group == self.neg_group].mean()
-    	avg_positive = \
-    	self.rt_table[self.rt_table.group == self.positive_group].mean()
+    	avg_control = \
+    	self.rt_table[self.rt_table.group == self.control].mean()
+    	avg_experimental = \
+    	self.rt_table[self.rt_table.group == self.experimental].mean()
     	
     	self.rt_table["average"] = self.rt_table.apply(lambda x: \
-    	 avg_negative if x == self.neg_group else avg_positive)
+    	 avg_control if x == self.negative else avg_experimental)
     	
     	self.rt_table["percent_average"] = \
     	(self.rt_table.expression / self.rt_table.average) *  100
