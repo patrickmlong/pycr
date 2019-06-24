@@ -19,21 +19,19 @@ class PcrParser(object):
     
     def input_table(self, file_name):
         try:
-        	self.rt_table = \
-        	os.path.join(os.path.normpath(self.file_path,
+        	self.rt_table = os.path.join(os.path.normpath(self.file_path,
                                      file_name))
         except OSError:
         	print("File {} not found".format(file_name))
         	import pdb; pdb.set_trace()
         	
         try:
-			self.rt_table = \
-        	self.rt_table.loc[:,["group", "target", "normalizer"]]
+            self.rt_table = self.rt_table.loc[:,["group", "target", "normalizer"]]
         	
         except:
-			print("Columns: group, target, an/or normalizer not in table " \
-               "columns: {}".format(self.rt_table.columns))
-			import pdb; pdb.set_trace()
+            print("Columns: group, target, an/or normalizer not in table " \
+                  "columns: {}".format(self.rt_table.columns))
+            import pdb; pdb.set_trace()
                   
       
     def format_table(self):
@@ -49,8 +47,7 @@ class PcrParser(object):
     	avg_experimental = \
     	self.rt_table[self.rt_table.group == self.experimental].mean()
     	
-    	self.rt_table["average"] = self.rt_table.apply(lambda x: \
-    	 avg_control if x == self.negative else avg_experimental)
+    	self.rt_table["average"] = self.rt_table.apply(lambda x: avg_control if x == self.negative else avg_experimental)
     	
     	self.rt_table["percent_average"] = \
     	(self.rt_table.expression / self.rt_table.average) *  100
