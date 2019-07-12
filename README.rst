@@ -5,7 +5,7 @@ pycr
 
 A package to automate quantitative PCR analysis for delta CT mRNA quantification. 
 
-This package uses argparse with the following entry points::
+This package uses the following entry points::
 
     $ runner.py -h
 
