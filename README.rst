@@ -5,7 +5,7 @@ pycr
 
 A package to automate quantitative PCR analysis for delta CT mRNA quantification. 
 
-This package uses argparse with the following entry points::
+This package uses the following entry points::
 
     $ runner.py -h
 
@@ -13,8 +13,8 @@ This package uses argparse with the following entry points::
       file_path         The path to your RNA CT data csv file
       file_name         Your raw rna ct data csv file for relative expression
                         analysis
-      pos_group         Your positive experimental group
-      neg_group         Your negative experimental group
+      experimental      Your experimental group
+      control           Your control group
       output_file_name  Your RNA CT data csv input
 
 
