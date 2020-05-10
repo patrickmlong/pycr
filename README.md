@@ -1,6 +1,6 @@
 pycr
 ====
-A small utility package to automate delta CT analysis for mRNA quantification i.e. fold mRNA expression of a target gene normalized to a housekeeping reference under various test conditions.
+A small utility package to automate delta CT analysis for mRNA quantification i.e. fold mRNA expression of a target gene normalized to a housekeeping reference gene under various test conditions.
 
 <img src="https://github.com/patrickmlong/pycr/blob/master/images/Qpcr-cycling.png" height="200"  class="center" title="RNA amplification">
 
