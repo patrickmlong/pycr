@@ -11,7 +11,7 @@ A small utility package to automate delta CT analysis for mRNA quantification i.
     $ pip install .
 
 
-<b>Command line entry point<b>
+<b>Command line entry point</b>
 
     $ pycr -h
     
