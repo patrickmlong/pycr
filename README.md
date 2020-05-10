@@ -11,9 +11,10 @@ Installation
     $ pip install .
 
 
-This package uses the pycr entry point with the following arguments
+To run, use the pcyr entry point with following arguments. 
 
     $ pycr -h
+    
     usage: pycr [-h]
                 file_path input_file_name experimental control output_file_name
 
