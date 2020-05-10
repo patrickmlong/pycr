@@ -4,7 +4,7 @@ pycr
 
 A package to automate quantitative PCR analysis for delta CT mRNA quantification. 
 
-image:: ./images/Qpcr-cycling.png
+<img src="https://github.com/patrickmlong/pycr/blob/master/images/Qpcr-cycling.png" height="800" title="RNA amplification">
 
 Installation::
 
