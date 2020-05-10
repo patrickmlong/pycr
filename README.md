@@ -1,19 +1,17 @@
-====
 pycr
 ====
-
 A package to automate quantitative PCR analysis for delta CT mRNA quantification. 
 
-<img src="https://github.com/patrickmlong/pycr/blob/master/images/Qpcr-cycling.png" height="800" title="RNA amplification">
+<img src="https://github.com/patrickmlong/pycr/blob/master/images/Qpcr-cycling.png" height="200"  class="center" title="RNA amplification">
 
-Installation::
+Installation:
 
     $ git clone https://github.com/patrickmlong/pycr.git pycr
     $ cd pycr
     $ pip install .
 
 
-This package uses the pycr entry point with the following arguments::
+This package uses the pycr entry point with the following arguments:
 
     $ pycr -h
     usage: pycr [-h]
