@@ -2,8 +2,9 @@
 pycr
 ====
 
-
 A package to automate quantitative PCR analysis for delta CT mRNA quantification. 
+
+image:: ./images/Qpcr-cycling.png
 
 Installation::
 
