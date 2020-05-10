@@ -4,14 +4,14 @@ A small utility package to automate delta CT analysis for mRNA quantification i.
 
 <img src="https://github.com/patrickmlong/pycr/blob/master/images/Qpcr-cycling.png" height="200"  class="center" title="RNA amplification">
 
-Installation
+<b>Installation</b>
 
     $ git clone https://github.com/patrickmlong/pycr.git pycr
     $ cd pycr
     $ pip install .
 
 
-To run, use the pcyr entry point with following arguments. 
+<b>Command line entry point<b>
 
     $ pycr -h
     
