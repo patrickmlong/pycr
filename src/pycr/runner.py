@@ -1,8 +1,8 @@
 import argparse
-import PcrParser
+import pycr.PcrParser
 
 
-def Main():
+def main():
 	parser = argparse.ArgumentParser()
 	parser.add_argument("file_path", 
 	help = "the path to your raw rna CT data csv file for delta CT RNA level analysis",
@@ -37,7 +37,7 @@ def Main():
 	
 	
 if __name__=='__main__':
-	Main()
+	main()
 						   
  	
 							 
