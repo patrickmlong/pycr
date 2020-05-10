@@ -15,14 +15,17 @@ Installation::
 This package uses the pycr entry point with the following arguments::
 
     $ pycr -h
+    usage: pycr [-h]
+                file_path input_file_name experimental control output_file_name
 
     positional arguments:
-      file_path         The path to your RNA CT data csv file
-      file_name         Your raw rna ct data csv file for relative expression
+      file_path         the path to your raw rna CT data csv file for delta CT RNA
+                        level analysis
+      input_file_name   your raw rna ct data csv file for delta CT RNA level
                         analysis
-      experimental      Your experimental group
-      control           Your control group
-      output_file_name  Your RNA CT data csv input
+      experimental      The name of your experimental group
+      control           The name of your control group
+      output_file_name  csv file name for RNA analysis results
 
 
 Note
