@@ -5,9 +5,16 @@ pycr
 
 A package to automate quantitative PCR analysis for delta CT mRNA quantification. 
 
-This package uses the following entry points::
+Installation::
 
-    $ runner.py -h
+    $ git clone https://github.com/patrickmlong/pycr.git pycr
+    $ cd pycr
+    $ pip install .
+
+
+This package uses the pycr entry point with the following arguments::
+
+    $ pycr -h
 
     positional arguments:
       file_path         The path to your RNA CT data csv file
