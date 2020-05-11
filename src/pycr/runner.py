@@ -1,5 +1,5 @@
 import argparse
-import pycr.PcrParser
+from pycr import PcrParser 
 
 
 def main():
@@ -38,8 +38,3 @@ def main():
 	
 if __name__=='__main__':
 	main()
-						   
- 	
-							 
-							 
-	
