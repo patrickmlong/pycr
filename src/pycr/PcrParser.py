@@ -25,8 +25,8 @@ class PcrParser(object):
             )
 
         except OSError:
-        	print("File {} not found".format(file_name))
-        	import pdb; pdb.set_trace()
+            print("File {} not found".format(file_name))
+            import pdb; pdb.set_trace()
         	
         try:
             self.rt_table = self.rt_table.loc[:,["group", "target", "normalizer"]]
@@ -39,20 +39,20 @@ class PcrParser(object):
       
     def format_table(self):
     	
-    	self.rt_table["delta_ct"] = \
-    	self.rt_table.target - self.rt_table.normalizer
+        self.rt_table["delta_ct"] = \
+        self.rt_table.target - self.rt_table.normalizer
     	
-    	self.rt_table["expression"] = \
+        self.rt_table["expression"] = \
     	2 ** self.rt_table.delta_ct
     	
-    	avg_control = \
-    	self.rt_table[self.rt_table.group == self.control].mean()
-    	avg_experimental = \
-    	self.rt_table[self.rt_table.group == self.experimental].mean()
-    	
-    	self.rt_table["average"] = self.rt_table["group"].apply(lambda x: avg_control if x == self.control else avg_experimental)
-    	
-    	self.rt_table["percent_average"] = \
+        avg_control = \
+        self.rt_table[self.rt_table.group == self.control].mean()
+        avg_experimental = \
+        self.rt_table[self.rt_table.group == self.experimental].mean()
+        
+        self.rt_table["average"] = self.rt_table["group"].apply(lambda x: avg_control if x == self.control else avg_experimental)
+
+        self.rt_table["percent_average"] = \
     	(self.rt_table["expression"] / self.rt_table["average"]) *  100
     	 
     
