@@ -12,11 +12,11 @@ import pytest
 
 
 @pytest.fixture(scope = "session")
-def parser():
+def rna_parser():
 
-    parser = PcrParser(
+    rna_parser = PcrParser(
     file_path = "/data/raw_data.csv",
     experimental = "plus_treatment",
     control = "without_treatment")
 
-    return parser
+    return rna_parser
