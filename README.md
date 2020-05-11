@@ -1,20 +1,20 @@
-====
 pycr
 ====
+A small utility package to automate delta CT analysis for mRNA quantification i.e. fold mRNA expression of a target gene normalized to a housekeeping gene under various test conditions.
 
+<img src="https://github.com/patrickmlong/pycr/blob/master/images/Qpcr-cycling.png" height="200"  class="center" title="RNA amplification">
 
-A package to automate quantitative PCR analysis for delta CT mRNA quantification. 
-
-Installation::
+<b>Installation</b>
 
     $ git clone https://github.com/patrickmlong/pycr.git pycr
     $ cd pycr
     $ pip install .
 
 
-This package uses the pycr entry point with the following arguments::
+<b>Command line entry point</b>
 
     $ pycr -h
+    
     usage: pycr [-h]
                 file_path input_file_name experimental control output_file_name
 
