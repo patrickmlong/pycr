@@ -27,7 +27,7 @@ def main():
     # Run pycr using arguments
 	args = parser.parse_args()
 	
-	rna_parser = PcrParser(args.file_path,args.pos_group, args.neg_group)
+	rna_parser = PcrParser(args.file_path,args.experimental, args.control)
 						   
 	input_table = rna_parser.input_table(args.file_name)
 	
