@@ -58,6 +58,8 @@ class PcrParser(object):
         #dd_table = pd.concat([sdf.rt_table[self.rt_table.group == self.experimental], self.rt_table[self.rt_table.group == self.control], axis = 1)
         #dd_table.columns = ["...."] = \
         #2** (dd_table.delta_ct_experimental - dd_table.delta_ct_control)
+        
+
     def visualize_rt(self):
     
     	sns.set(style = "whitegrid")
