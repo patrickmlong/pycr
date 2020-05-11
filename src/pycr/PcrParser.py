@@ -41,21 +41,23 @@ class PcrParser(object):
     	
         self.rt_table["delta_ct"] = \
         self.rt_table.target - self.rt_table.normalizer
-    	
+
         self.rt_table["expression"] = \
     	2 ** self.rt_table.delta_ct
-    	
+
         avg_control = \
-        self.rt_table[self.rt_table.group == self.control].mean()
+        self.rt_table[self.rt_table.group == self.control].target.mean()
         avg_experimental = \
-        self.rt_table[self.rt_table.group == self.experimental].mean()
+        self.rt_table[self.rt_table.group == self.experimental].target.mean()
         
         self.rt_table["average"] = self.rt_table["group"].apply(lambda x: avg_control if x == self.control else avg_experimental)
 
         self.rt_table["percent_average"] = \
     	(self.rt_table["expression"] / self.rt_table["average"]) *  100
     	 
-    
+        #dd_table = pd.concat([sdf.rt_table[self.rt_table.group == self.experimental], self.rt_table[self.rt_table.group == self.control], axis = 1)
+        #dd_table.columns = ["...."] = \
+        #2** (dd_table.delta_ct_experimental - dd_table.delta_ct_control)
     def visualize_rt(self):
     
     	sns.set(style = "whitegrid")
@@ -66,8 +68,9 @@ class PcrParser(object):
     
     def save_table_to_csv(self, file_name):
     
-        self.rt_table.to_csv(os.pathjoin(os. \
-        path.normpath(self.file_path, file_name)), index = False)
+        self.rt_table.to_csv(os.path.normpath(
+        os.path.join(self.file_path, file_name)),
+        index = False)
         
         
     
