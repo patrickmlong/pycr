@@ -8,4 +8,15 @@
     https://pytest.org/latest/plugins.html
 """
 
-# import pytest
+import pytest
+
+
+@pytest.fixture(scope = "session")
+def parser():
+
+    parser = PcrParser(
+    file_path = "/data/raw_data.csv",
+    experimental = "plus_treatment",
+    control = "without_treatment")
+
+    return parser
