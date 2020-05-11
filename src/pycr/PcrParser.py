@@ -19,8 +19,10 @@ class PcrParser(object):
     
     def input_table(self, file_name):
         try:
-        	self.rt_table = os.path.normpath(os.path.join(
+            self.rt_table = pd.read_csv(
+            os.path.normpath(os.path.join(
             self.file_path, file_name))
+            )
 
         except OSError:
         	print("File {} not found".format(file_name))
@@ -48,10 +50,10 @@ class PcrParser(object):
     	avg_experimental = \
     	self.rt_table[self.rt_table.group == self.experimental].mean()
     	
-    	self.rt_table["average"] = self.rt_table.apply(lambda x: avg_control if x == self.negative else avg_experimental)
+    	self.rt_table["average"] = self.rt_table["group"].apply(lambda x: avg_control if x == self.control else avg_experimental)
     	
     	self.rt_table["percent_average"] = \
-    	(self.rt_table.expression / self.rt_table.average) *  100
+    	(self.rt_table["expression"] / self.rt_table["average"]) *  100
     	 
     
     def visualize_rt(self):
