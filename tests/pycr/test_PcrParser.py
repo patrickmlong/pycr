@@ -1,5 +1,5 @@
 import pytest
-import pycr.PcrParser as pcr
+from pycr import PcrParser
 import pandas as pd
 import numpy as np
 

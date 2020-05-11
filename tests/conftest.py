@@ -9,13 +9,13 @@
 """
 
 import pytest
-
+from pycr import PcrParser
 
 @pytest.fixture(scope = "session")
 def rna_parser():
 
     rna_parser = PcrParser(
-    file_path = "/data/raw_data.csv",
+    file_path = "./data/raw_data.csv",
     experimental = "plus_treatment",
     control = "without_treatment")
 
