@@ -1,5 +1,5 @@
 import argparse
-from pycr import PcrParser 
+from pycr.pcrparser import PcrParser 
 
 
 def main():

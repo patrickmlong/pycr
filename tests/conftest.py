@@ -9,7 +9,7 @@
 """
 
 import pytest
-from pycr import PcrParser
+from pycr.pcrparser import PcrParser
 
 @pytest.fixture(scope = "session")
 def rna_parser():
