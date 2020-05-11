@@ -19,8 +19,9 @@ class PcrParser(object):
     
     def input_table(self, file_name):
         try:
-        	self.rt_table = os.path.join(os.path.normpath(self.file_path,
-                                     file_name))
+        	self.rt_table = os.path.normpath(os.path.join(
+            self.file_path, file_name))
+
         except OSError:
         	print("File {} not found".format(file_name))
         	import pdb; pdb.set_trace()
