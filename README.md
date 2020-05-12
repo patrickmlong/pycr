@@ -4,7 +4,7 @@ A small utility package to automate quantification for mRNA. Fold mRNA expressio
 
 <img src="https://github.com/patrickmlong/pycr/blob/master/images/Qpcr-cycling.png" height="200"  class="center" title="RNA amplification">
 delta delta ct quantification (under perfect efficiency):<br><br>
-<img src="https://github.com/patrickmlong/pycr/blob/master/images/CodeCogsEqn.png" height="100" title="delta delta ct quantification">
+
 
 <b>Installation</b>
 
