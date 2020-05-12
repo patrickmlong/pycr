@@ -3,7 +3,8 @@ pycr
 A small utility package to automate quantification for mRNA. Fold mRNA expression is calculated via delta delta CT method.
 
 <img src="https://github.com/patrickmlong/pycr/blob/master/images/Qpcr-cycling.png" height="200"  class="center" title="RNA amplification">
-<img src="https://github.com/patrickmlong/pycr/blob/master/images/CodeCogsEqn.tiff" height="200"  class="center" title="delta delta ct quantification">
+<b>delta delta ct quantification:</b><br>
+<img src="https://github.com/patrickmlong/pycr/blob/master/images/CodeCogsEqn.png" height="100" title="delta delta ct quantification">
 <b>Installation</b>
 
     $ git clone https://github.com/patrickmlong/pycr.git pycr
