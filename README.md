@@ -35,7 +35,7 @@ A small utility package to automate quantification of relative mRNA expression.
     INFO:pycr:Saving output table: data/demo_data_processed.csv
     INFO:pycr:Saving output figure: data/demo_data_processed.png
  
-<img src="https://github.com/pkmklong/pycr/blob/master/images/demo_data_processed.png" height="200"  class="center" title="Demo visualization">
+<img src="https://github.com/pkmklong/pycr/blob/master/images/demo_data_processed.png" height="300"  class="center" title="Demo visualization">
 
 Note
 ====
