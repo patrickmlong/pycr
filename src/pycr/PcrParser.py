@@ -20,6 +20,8 @@ class PcrParser(object):
         self.experimental = experimental
         self.control = control
         self.rt_table = pd.DataFrame()
+        self.output_path = f"{Path(file_path).parents[0]}" \
+        f"/{Path(file_path).stem}_processed"
 
 
     def input_table(self):
@@ -63,18 +65,19 @@ class PcrParser(object):
 
     def save_table_to_csv(self):
         """Save output file suffixed with "_processed.csv"""
-      
-        output_path = f"{Path(self.file_path).parents[0]}" \
-        f"/{Path(self.file_path).stem}_processed.csv"
-
-        logger.info(f"Saving output table: {output_path}") 
-
-        self.rt_table.to_csv(output_path, index = False)
+        
+        output = self.output_path + ".csv"
+        logger.info(f"Saving output table: {output}")
+        self.rt_table.to_csv(output, index = False)
 
 
     def visualize_rt(self):
         """WIP add visualization method"""
-        sns.set(style = "whitegrid")
-    	
-        sns.boxplot(x = "group", y =  "percent_average",
-    	            data = self.rt_table)
+
+        output = self.output_path +  ".png"
+        logger.info(f"Saving output figure: {output}")
+        sns.set(style = "white")
+        sns.boxplot(x = "group",
+                    y =  "percent_average",
+                    data = self.rt_table)
+        plt.savefig(output, dpi=300)

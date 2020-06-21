@@ -17,19 +17,13 @@ def main():
 	help = "The name of your control group",
 	type = str)
 
-    #logging.basicConfig(level = logging.INFO)
-    #logger = logging.getLogger("pycr")
-
     args = parser.parse_args()
     rna_parser = PcrParser(args.file_path,args.experimental, args.control)
     
-    #logger.info(f"Loading input {args.file_path}")
     input_table = rna_parser.input_table()
-    #logger.info("Formatting table")
     input_table = rna_parser.format_table()
-    #logger.info("Saving table")
     rna_parser.save_table_to_csv()
-    
+    rna_parser.visualize_rt() 
 
 if __name__=='__main__':
 	main()
