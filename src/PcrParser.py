@@ -2,6 +2,8 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
 import os
+from pathlib iport Path
+
 
 class PcrParser(object):
     """
@@ -17,13 +19,11 @@ class PcrParser(object):
         self.rt_table = pd.DataFrame()
         
     
-    def input_table(self, file_name):
+    def input_table(self):
         try:
-        	self.rt_table = \
-        	os.path.join(os.path.normpath(self.file_path,
-                                     file_name))
+        	self.rt_table = Path(self.file_path) 
         except OSError:
-        	print("File {} not found".format(file_name))
+        	print(f"File {self.file_path} not found")
         	import pdb; pdb.set_trace()
         	
         try:
@@ -56,18 +56,16 @@ class PcrParser(object):
     	(self.rt_table.expression / self.rt_table.average) *  100
     	 
     
+   
+    def save_table_to_csv(self):
+    
+        self.rt_table.to_csv(f"{Path(self.file_path).parent[0]}" \
+        f"/{Path(self.file_path).stem}_processed.csv"), index = False)
+
+
     def visualize_rt(self):
     
     	sns.set(style = "whitegrid")
     	
     	sns.boxplot(x = "group", y =  "percent_average",
     	            data = self.rt_table)
-
-    
-    def save_table_to_csv(self, file_name):
-    
-        self.rt_table.to_csv(os.pathjoin(os. \
-        path.normpath(self.file_path, file_name)), index = False)
-        
-        
-    
