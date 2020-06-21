@@ -2,7 +2,7 @@ pycr
 ====
 A small utility package to automate quantification of relative mRNA expression.
 
-<img src="https://github.com/patrickmlong/pycr/blob/master/images/Qpcr-cycling.png" height="200"  class="center" title="RNA amplification">
+<img src="https://github.com/pkmklong/pycr/blob/master/images/Qpcr-cycling.png" height="200"  class="center" title="RNA amplification">
 
 <b>Installation</b>
 
@@ -28,7 +28,15 @@ A small utility package to automate quantification of relative mRNA expression.
 <b>Demo</b>
 
     $ pycr  ./data/demo_data.csv treatment no_treatment
-    
+<br>    
+
+    INFO:pycr:Loading table: ./data/demo_data.csv
+    INFO:pycr:Formatting table
+    INFO:pycr:Saving output table: data/demo_data_processed.csv
+    INFO:pycr:Saving output figure: data/demo_data_processed.png
+ 
+<img src="https://github.com/pkmklong/pycr/blob/master/images/demo_data_processed.png" height="200"  class="center" title="Demo visualization">
+
 Note
 ====
 
