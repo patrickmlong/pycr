@@ -17,7 +17,7 @@ A small utility package to automate quantification of relative mRNA expression.
     usage: pycr [-h] file_path experimental control
 
     positional arguments:
-      file_path     The path to a rna cycle threshold data (csv) for delta ct relative RNA quantification
+      file_path     The path to rna cycle threshold data (csv) for delta ct relative RNA quantification
       experimental  The name of your experimental group
       control       The name of your control group
 
