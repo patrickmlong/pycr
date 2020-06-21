@@ -36,6 +36,7 @@ A small utility package to automate quantification of relative mRNA expression.
     INFO:pycr:Saving output figure: data/demo_data_processed.png
 
 <b>Demo visualization</b>
+
 <img src="https://github.com/pkmklong/pycr/blob/master/images/demo_data_processed.png" height="300"  class="center" title="Demo visualization">
 
 Note
