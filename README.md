@@ -6,7 +6,7 @@ A small utility package to automate quantification of relative mRNA expression.
 
 <b>Installation</b>
 
-    $ git clone https://github.com/patrickmlong/pycr.git pycr
+    $ git clone https://github.com/pkmklong/pycr.git pycr
     $ cd pycr
     $ pip install .
 

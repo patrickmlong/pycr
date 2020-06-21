@@ -1,7 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-import os
+from pathlib import Path
+
 
 class PcrParser(object):
     """
@@ -17,23 +18,18 @@ class PcrParser(object):
         self.rt_table = pd.DataFrame()
         
     
-    def input_table(self, file_name):
+    def input_table(self):
         try:
-            self.rt_table = pd.read_csv(
-            os.path.normpath(os.path.join(
-            self.file_path, file_name))
-            )
-
+            self.rt_table = pd.read_csv(Path(self.file_path))
         except OSError:
-            print("File {} not found".format(file_name))
+            print(f"File {self.file_path} not found")
             import pdb; pdb.set_trace()
         	
         try:
             self.rt_table = self.rt_table.loc[:,["group", "target", "normalizer"]]
-        	
         except:
             print("Columns: group, target, an/or normalizer not in table " \
-                  "columns: {}".format(self.rt_table.columns))
+                  f"columns:{self.rt_table.columns}")
             import pdb; pdb.set_trace()
                   
       
@@ -50,15 +46,17 @@ class PcrParser(object):
         avg_experimental = \
         self.rt_table[self.rt_table.group == self.experimental].target.mean()
         
-        self.rt_table["average"] = self.rt_table["group"].apply(lambda x: avg_control if x == self.control else avg_experimental)
+        self.rt_table["average"] = self.rt_table["group"]. \
+        apply(lambda x: avg_control if x == self.control else avg_experimental)
 
         self.rt_table["percent_average"] = \
     	(self.rt_table["expression"] / self.rt_table["average"]) *  100
     	 
-        #dd_table = pd.concat([sdf.rt_table[self.rt_table.group == self.experimental], self.rt_table[self.rt_table.group == self.control], axis = 1)
-        #dd_table.columns = ["...."] = \
-        #2** (dd_table.delta_ct_experimental - dd_table.delta_ct_control)
-        
+
+    def save_table_to_csv(self):
+        self.rt_table.to_csv(f"{Path(self.file_path).parents[0]}" \
+        f"/{Path(self.file_path).stem}_processed.csv", index = False)
+
 
     def visualize_rt(self):
     
@@ -67,12 +65,4 @@ class PcrParser(object):
     	sns.boxplot(x = "group", y =  "percent_average",
     	            data = self.rt_table)
 
-    
-    def save_table_to_csv(self, file_name):
-    
-        self.rt_table.to_csv(os.path.normpath(
-        os.path.join(self.file_path, file_name)),
-        index = False)
-        
-        
-    
+       
