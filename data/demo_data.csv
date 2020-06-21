@@ -1,0 +1,10 @@
+group,target,normalizer
+no_treatment,1,0.5
+no_treatment,2,0.5
+no_treatment,3,0.5
+no_treatment,4,0.5
+no_treatment,5,0.5
+treatment,6,0.5
+treatment,7,0.5
+treatment,8,0.5
+treatment,9,0.5
