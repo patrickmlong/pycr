@@ -18,7 +18,7 @@ class PcrParser(object):
         self.rt_table = pd.DataFrame()
         
     
-    def input_table(self, file_name):
+    def input_table(self):
         try:
             self.rt_table = pd.read_csv(Path(self.file_path))
         except OSError:
@@ -54,7 +54,7 @@ class PcrParser(object):
     	 
 
     def save_table_to_csv(self):
-        self.rt_table.to_csv(f"{Path(self.file_path).parent[0]}" \
+        self.rt_table.to_csv(f"{Path(self.file_path).parents[0]}" \
         f"/{Path(self.file_path).stem}_processed.csv", index = False)
 
 
