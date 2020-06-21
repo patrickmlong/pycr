@@ -27,7 +27,7 @@ A small utility package to automate quantification of relative mRNA expression.
 
 <b>Demo</b>
 
-    $ pycr  ./data/demo_data.csv no_treatment treatment
+    $ pycr  ./data/demo_data.csv treatment no_treatment
     
 Note
 ====
