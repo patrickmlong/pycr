@@ -52,14 +52,13 @@ class PcrParser(object):
         self.rt_table["percent_average"] = \
     	(self.rt_table["expression"] / self.rt_table["average"]) *  100
     	 
-    
-     def save_table_to_csv(self):
-    
+
+    def save_table_to_csv(self):
         self.rt_table.to_csv(f"{Path(self.file_path).parent[0]}" \
-        f"/{Path(self.file_path).stem}_processed.csv"), index = False)        
+        f"/{Path(self.file_path).stem}_processed.csv", index = False)
 
 
-     def visualize_rt(self):
+    def visualize_rt(self):
     
     	sns.set(style = "whitegrid")
     	
