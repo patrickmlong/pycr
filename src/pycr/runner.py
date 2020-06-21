@@ -5,7 +5,7 @@ from pycr.pcrparser import PcrParser
 def main():
 	parser = argparse.ArgumentParser()
 	parser.add_argument("file_path", 
-	help = "The path to your raw rna CT data csv file for delta CT RNA level analysis",
+	help = "The path to a rna cycle threshold data (csv) for delta ct relative RNA quantification",
 	type = str)
 	
 	parser.add_argument("experimental",
