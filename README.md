@@ -14,20 +14,22 @@ A small utility package to automate quantification for mRNA. Fold mRNA expressio
 <b>Command line entry point</b>
 
     $ pycr -h
-    
-    usage: pycr [-h]
-                file_path input_file_name experimental control output_file_name
+    usage: pycr [-h] file_path experimental control
 
     positional arguments:
-      file_path         the path to your raw rna CT data csv file for delta CT RNA
-                        level analysis
-      input_file_name   your raw rna ct data csv file for delta CT RNA level
-                        analysis
-      experimental      The name of your experimental group
-      control           The name of your control group
-      output_file_name  csv file name for RNA analysis results
+      file_path     The path to your raw rna CT data csv file for delta CT RNA
+                level analysis
+      experimental  The name of your experimental group
+      control       The name of your control group
 
+    optional arguments:
+      -h, --help    show this help message and exit
+      
 
+<b>Demo</b>
+
+    $ pycr  ./data/demo_data.csv no_treatment treatment
+    
 Note
 ====
 
