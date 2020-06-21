@@ -76,8 +76,8 @@ class PcrParser(object):
 
         output = self.output_path +  ".png"
         logger.info(f"Saving output figure: {output}")
-        sns.set(style = "whitegrid")
+        sns.set(style = "white")
         sns.boxplot(x = "group",
                     y =  "percent_average",
                     data = self.rt_table)
-        plt.savefig(output)
+        plt.savefig(output, dpi=300)
