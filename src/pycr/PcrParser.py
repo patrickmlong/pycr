@@ -3,8 +3,9 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
 import logging
-logging.basicConfig(format='%(asctime)s %(message)s', datefmt='%m/%d/%Y %I:%M:%S %p')
-logger = logging.getLogger(__name__)
+
+logging.basicConfig(level = logging.INFO)
+logger = logging.getLogger("pycr")
 
 class PcrParser(object):
     """
@@ -12,7 +13,8 @@ class PcrParser(object):
     the analysis of RNA levels detected by RT-PCR.
     RNA expression is calculated using the delta Ct method.  
     """
-    
+
+
     def __init__(self, file_path, experimental, control):
         self.file_path = file_path
         self.experimental = experimental
@@ -22,8 +24,7 @@ class PcrParser(object):
 
     def input_table(self):
         """"Load input table and format appropriate headers"""
-        
-        logger.info(f"Loading input table {Path(self.file_path).name}")
+        logger.info(f"Loading table: {self.file_path}")
         try:
             self.rt_table = pd.read_csv(Path(self.file_path))
         except OSError:
@@ -33,7 +34,7 @@ class PcrParser(object):
         try:
             self.rt_table = self.rt_table.loc[:,["group", "target", "normalizer"]]
         except:
-            print("Columns: group, target, an/or normalizer not in table " \
+            logger.info("Columns: group, target, an/or normalizer not in table " \
                   f"columns:{self.rt_table.columns}")
             import pdb; pdb.set_trace()
 
@@ -41,7 +42,7 @@ class PcrParser(object):
     def format_table(self):
         """Calculate relative mRNA levels using delta ct as percentage of control"""
         
-        logger.info("Formatting output table")
+        logger.info("Formatting table")
         self.rt_table["delta_ct"] = \
         self.rt_table.target - self.rt_table.normalizer
 
@@ -63,12 +64,12 @@ class PcrParser(object):
     def save_table_to_csv(self):
         """Save output file suffixed with "_processed.csv"""
       
-        output_file = f"{Path(self.file_path).parents[0]}" \
+        output_path = f"{Path(self.file_path).parents[0]}" \
         f"/{Path(self.file_path).stem}_processed.csv"
-        
-        logger.info(f"Saving formatted file to: {output_file}")
-        
-        self.rt_table.to_csv(output_file, index = False)
+
+        logger.info(f"Saving output table: {output_path}") 
+
+        self.rt_table.to_csv(output_path, index = False)
 
 
     def visualize_rt(self):
