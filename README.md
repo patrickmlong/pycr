@@ -11,7 +11,7 @@ A small utility package to automate quantification of relative mRNA expression.
     $ pip install .
 
 
-<b>Command line entry point</b>
+<b>Command line</b>
 
     $ pycr -h
     usage: pycr [-h] file_path experimental control
