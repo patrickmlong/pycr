@@ -74,10 +74,10 @@ class PcrParser(object):
     def visualize_rt(self):
         """WIP add visualization method"""
 
-        logger.info("Saving output figure: {output}")
         output = self.output_path +  ".png"
+        logger.info(f"Saving output figure: {output}")
         sns.set(style = "whitegrid")
         sns.boxplot(x = "group",
                     y =  "percent_average",
                     data = self.rt_table)
-        savefig(output)
+        plt.savefig(output)
