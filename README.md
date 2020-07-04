@@ -1,6 +1,6 @@
 pycr
 ====
-A small utility package to automate [relative quantification of mRNA](https://pubmed.ncbi.nlm.nih.gov/16060372/) from thermocycler ct data. 
+A small utility package to automate [relative quantification of mRNA](https://en.wikipedia.org/wiki/Real-time_polymerase_chain_reaction) from thermocycler ct data. 
 
 <img src="https://github.com/pkmklong/pycr/blob/master/images/Qpcr-cycling.png" height="200"  class="center" title="RNA amplification">
 
