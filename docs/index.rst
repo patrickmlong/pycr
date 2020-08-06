@@ -8,16 +8,18 @@ From github::
     $ pip install .
 
 
-Running pcyr from the command line::
+Running pycr::
 
     $ pycr -h
 
         usage: pycr [-h] file_path experimental control
+
         positional arguments:
             file_path     The path to rna cycle threshold tabular data (csv) for delta ct relative RNA quantification
             experimental  The name of your experimental group
             control       The name of your control group
-            optional arguments:
+            
+        optional arguments:
                 -h, --help    show this help message and exit
 
 .. toctree::
