@@ -20,7 +20,7 @@ Running pycr::
             control       The name of your control group
             
         optional arguments:
-                -h, --help    show this help message and exit
+            -h, --help    show this help message and exit
 
 .. toctree::
    :maxdepth: 2
