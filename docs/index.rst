@@ -3,10 +3,7 @@ Pycr documentation
 
 Installation::
 
-    $ git clone https://github.com/pkmklong/pycr.git pycr
-    $ cd pycr
-    $ pip install .
-
+    $ python -m pip install git+https://github.com/pkmklong/pycr.git
 
 Running pycr::
 
