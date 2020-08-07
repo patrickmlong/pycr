@@ -9,10 +9,7 @@ A small utility package to automate [relative quantification of mRNA](https://en
 
 <b>Installation</b>
 
-    $ git clone https://github.com/pkmklong/pycr.git pycr
-    $ cd pycr
-    $ pip install .
-
+    $ python -m pip install git+https://github.com/pkmklong/pycr.git
 
 <b>Command line</b>
 
