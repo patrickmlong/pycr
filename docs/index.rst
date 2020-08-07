@@ -1,7 +1,7 @@
 Pycr documentation
 =====================================
 
-From github::
+Installation::
 
     $ git clone https://github.com/pkmklong/pycr.git pycr
     $ cd pycr
@@ -21,6 +21,15 @@ Running pycr::
             
         optional arguments:
             -h, --help    show this help message and exit
+
+Demo::
+
+    $ pycr  ./data/demo_data.csv treatment no_treatment
+
+    INFO:pycr:Loading table: ./data/demo_data.csv
+    INFO:pycr:Formatting table
+    INFO:pycr:Saving output table: data/demo_data_processed.csv
+    INFO:pycr:Saving output figure: data/demo_data_processed.png
 
 .. toctree::
    :maxdepth: 2
