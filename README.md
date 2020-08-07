@@ -1,4 +1,4 @@
-[![Documentation Status](https://readthedocs.org/projects/docs/badge/?version=latest)](https://pycr.readthedocs.io/en/latest/)
+[![Documentation Status](https://readthedocs.org/projects/docs/badge/?version=latest)](https://pycr.readthedocs.io/en/latest/) Check out the [pycr documentation on ReadTheDocs](https://pycr.readthedocs.io/en/latest/).
 
 
 pycr
@@ -42,7 +42,6 @@ A small utility package to automate [relative quantification of mRNA](https://en
 
 <img src="https://github.com/pkmklong/pycr/blob/master/images/demo_data_processed.png" height="300"  class="center" title="Demo visualization">
 
-For more, check out the [pycr documentation on ReadTheDocs](https://pycr.readthedocs.io/en/latest/).
 
 Note
 ====
