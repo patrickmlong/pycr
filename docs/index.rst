@@ -22,6 +22,7 @@ Running pycr::
         optional arguments:
             -h, --help    show this help message and exit
 
+
 Demo::
 
     $ pycr  ./data/demo_data.csv treatment no_treatment
@@ -30,6 +31,11 @@ Demo::
     INFO:pycr:Formatting table
     INFO:pycr:Saving output table: data/demo_data_processed.csv
     INFO:pycr:Saving output figure: data/demo_data_processed.png
+
+
+.. image:: ../images/demo_data_processed.png
+  :width: 300
+  :alt: Demo visualization 
 
 .. toctree::
    :maxdepth: 2
