@@ -24,10 +24,10 @@ Running pycr::
 
 Expected input schema::
 
-    {column name: data type}
-    group:            str
-    target:           float
-    normalizer:       float
+    {column name:  type}
+    group:         str
+    target:        float
+    normalizer:    float
 
 
 Demo::
