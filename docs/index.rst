@@ -1,5 +1,6 @@
 Pycr documentation
 =====================================
+A small utility package to automate [relative quantification of mRNA](https://en.wikipedia.org/wiki/Real-time_polymerase_chain_reaction) from thermocycler ct data. 
 
 Installation::
 
