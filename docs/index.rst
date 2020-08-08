@@ -21,6 +21,15 @@ Running pycr::
             -h, --help    show this help message and exit
 
 
+
+Expected input schema::
+
+    {column name: data type}
+    group:            str
+    target:           float
+    normalizer:       float
+
+
 Demo::
 
     $ pycr  ./data/demo_data.csv treatment no_treatment
