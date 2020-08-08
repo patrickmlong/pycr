@@ -32,7 +32,7 @@ Input data dictionary::
 
 Delta Delta Ct Eqn
 
-.. image:: ../images/ddct.png
+.. image:: ../images/ddct_bk.png
   :width: 500
   :alt: delta delta CT 
 
