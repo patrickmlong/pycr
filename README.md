@@ -25,12 +25,12 @@ Currently assumes perfect amplification efficiency.
       -h, --help    show this help message and exit
       
 
-<b>Expected input schema</b>
+<b>Input data dictionary</b>
 ```
-{column name: data type}
-group:            str
-target:           float
-normalizer:       float
+{column name:     type      description}
+group:            str       Name of experimental and control groups. Assumes bivariate analysis.
+target:           float     ct values of target transcript.
+normalizer:       float     ct values of housekeeping transcript.
 ```
 
 <b>Demo</b>
