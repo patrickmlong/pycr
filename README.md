@@ -4,7 +4,7 @@
 pycr
 ====
 A small utility package to automate [relative quantification of mRNA](https://en.wikipedia.org/wiki/Real-time_polymerase_chain_reaction) from thermocycler ct data. 
-Currently assumes perfect amplification efficiency.
+Currently assumes perfect amplification efficiency and unpaired samples.
 
 <b>Installation</b>
 
@@ -32,7 +32,7 @@ target:           float     ct values of target transcript.
 normalizer:       float     ct values of housekeeping transcript.
 ```
 
-<b>Delta Delta Ct Eqn</b>
+<b>Fold expression</b>
 
 <img src="https://github.com/pkmklong/pycr/blob/master/images/ddct_bk.png" height="100"  class="center" title="delta delta CT">
 
