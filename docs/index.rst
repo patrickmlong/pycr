@@ -25,7 +25,7 @@ Running pycr::
 Input data dictionary::
 
     {column name:  type    description}
-    group:         str     Names of groups for relative comparison. Assumes bivariate analysis.
+    group:         str     Names of comparison groups. Assumes bivariate analysis.
     target:        float   ct values of target transcript.
     normalizer:    float   ct values of housekeeping transcript.
 
