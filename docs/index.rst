@@ -24,10 +24,10 @@ Running pycr::
 
 Input data dictionary::
 
-    {column name:  type,    description}
-    group:         str,     Name of experimental and control groups. Assumes bivariate analysis.
-    target:        float,   ct values of target transcript.
-    normalizer:    float,   ct values of housekeeping transcript.
+    {column name:  type    description}
+    group:         str     Names of groups for relative comparison. Assumes bivariate analysis.
+    target:        float   ct values of target transcript.
+    normalizer:    float   ct values of housekeeping transcript.
 
 
 Demo::
