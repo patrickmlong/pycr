@@ -30,6 +30,13 @@ Input data dictionary::
     normalizer:    float   ct values of housekeeping transcript.
 
 
+Delta Delta Ct Eqn::
+
+.. image:: ../images/ddct.png
+  :width: 100
+  :alt: delta delta CT 
+
+
 Demo::
 
     $ pycr  ./data/demo_data.csv treatment no_treatment
