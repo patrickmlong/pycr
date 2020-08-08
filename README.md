@@ -34,7 +34,7 @@ normalizer:       float     ct values of housekeeping transcript.
 
 <b>Delta Delta Ct Eqn</b>
 
-<img src="https://github.com/pkmklong/pycr/blob/master/images/ddct.png" height="100"  class="center" title="delta delta CT">
+<img src="https://github.com/pkmklong/pycr/blob/master/images/ddct_bk.png" height="100"  class="center" title="delta delta CT">
 
 
 <b>Demo</b>
