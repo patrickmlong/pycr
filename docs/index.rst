@@ -33,7 +33,7 @@ Input data dictionary::
 Delta Delta Ct Eqn
 
 .. image:: ../images/ddct.png
-  :width: 300
+  :width: 500
   :alt: delta delta CT 
 
 
