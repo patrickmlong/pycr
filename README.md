@@ -8,7 +8,7 @@ Currently assumes perfect amplification efficiency.
 
 <b>Delta Delta Ct Eqn</b>
 
-<img src="https://github.com/pkmklong/pycr/blob/master/images/ddct.png" height="80"  class="center" title="delta delta CT">
+<img src="https://github.com/pkmklong/pycr/blob/master/images/ddct.png" height="100"  class="center" title="delta delta CT">
 
 <b>Installation</b>
 
