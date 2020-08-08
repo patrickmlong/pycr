@@ -22,12 +22,12 @@ Running pycr::
 
 
 
-Expected input schema::
+Input data dictionary::
 
-    {column name:  type}
-    group:         str
-    target:        float
-    normalizer:    float
+    {column name:  type,    description}
+    group:         str,     Name of experimental and control groups. Assumes bivariate analysis.
+    target:        float,   ct values of target transcript.
+    normalizer:    float,   ct values of housekeeping transcript.
 
 
 Demo::
