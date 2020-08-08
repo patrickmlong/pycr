@@ -25,6 +25,14 @@ Currently assumes perfect amplification efficiency.
       -h, --help    show this help message and exit
       
 
+<b>Expected input schema</b>
+```
+{column name: data type}
+group:            str
+target:           float
+normalizer:       float
+```
+
 <b>Demo</b>
 
     $ pycr  ./data/demo_data.csv treatment no_treatment
