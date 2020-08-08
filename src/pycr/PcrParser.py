@@ -56,7 +56,7 @@ class PcrParser(object):
         self.rt_table.delta_ct - avg_delta_ct_control
 
         self.rt_table["fold_change"] = \
-        2 ** (-self.rt_table.delta_ct)
+        2 ** (-self.rt_table.delta_delta_ct)
 
 
     def save_table_to_csv(self):
@@ -74,6 +74,6 @@ class PcrParser(object):
         logger.info(f"Saving output figure: {output}")
         sns.set(style = "white")
         sns.boxplot(x = "group",
-                    y =  "delta_delta_ct",
+                    y =  "fold_change",
                     data = self.rt_table)
         plt.savefig(output, dpi=300)
