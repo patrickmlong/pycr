@@ -30,7 +30,7 @@ Input data dictionary::
     normalizer:    float   ct values of housekeeping transcript.
 
 
-Delta Delta Ct Eqn
+Fold expression
 
 .. image:: ../images/ddct_bk.png
   :width: 500
