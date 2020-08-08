@@ -6,6 +6,8 @@ pycr
 A small utility package to automate [relative quantification of mRNA](https://en.wikipedia.org/wiki/Real-time_polymerase_chain_reaction) from thermocycler ct data. 
 Currently assumes perfect amplification efficiency.
 
+<img src="https://github.com/pkmklong/pycr/blob/master/images/CodeCogsEqn.png" height="300"  class="center" title="delta delta CT">
+
 
 <b>Installation</b>
 
