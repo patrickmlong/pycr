@@ -42,25 +42,21 @@ class PcrParser(object):
 
 
     def format_table(self):
-        """Calculate relative mRNA levels using delta ct as percentage of control"""
+        """Calculate relative mRNA levels using delta delta ct"""
         
         logger.info("Formatting table")
+
         self.rt_table["delta_ct"] = \
         self.rt_table.target - self.rt_table.normalizer
 
-        self.rt_table["expression"] = \
-        2 ** self.rt_table.delta_ct
-
-        avg_control = \
-        self.rt_table[self.rt_table.group == self.control].target.mean()
-        avg_experimental = \
-        self.rt_table[self.rt_table.group == self.experimental].target.mean()
+        avg_delta_ct_control = \
+        self.rt_table[self.rt_table.group == self.control].delta_ct.mean()
         
-        self.rt_table["average"] = self.rt_table["group"]. \
-        apply(lambda x: avg_control if x == self.control else avg_experimental)
+        self.rt_table["delta_delta_ct"] = \
+        self.rt_table.delta_ct - avg_delta_ct_control
 
-        self.rt_table["percent_average"] = \
-    	(self.rt_table["expression"] / self.rt_table["average"]) *  100
+        self.rt_table["fold_change"] = \
+        2 ** (-self.rt_table.delta_ct)
 
 
     def save_table_to_csv(self):
@@ -78,6 +74,6 @@ class PcrParser(object):
         logger.info(f"Saving output figure: {output}")
         sns.set(style = "white")
         sns.boxplot(x = "group",
-                    y =  "percent_average",
+                    y =  "delta_delta_ct",
                     data = self.rt_table)
         plt.savefig(output, dpi=300)
