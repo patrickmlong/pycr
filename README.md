@@ -6,10 +6,6 @@ pycr
 A small utility package to automate [relative quantification of mRNA](https://en.wikipedia.org/wiki/Real-time_polymerase_chain_reaction) from thermocycler ct data. 
 Currently assumes perfect amplification efficiency.
 
-<b>Delta Delta Ct Eqn</b>
-
-<img src="https://github.com/pkmklong/pycr/blob/master/images/ddct.png" height="100"  class="center" title="delta delta CT">
-
 <b>Installation</b>
 
     $ python -m pip install git+https://github.com/pkmklong/pycr.git
@@ -35,6 +31,11 @@ group:            str       Name of experimental and control groups. Assumes biv
 target:           float     ct values of target transcript.
 normalizer:       float     ct values of housekeeping transcript.
 ```
+
+<b>Delta Delta Ct Eqn</b>
+
+<img src="https://github.com/pkmklong/pycr/blob/master/images/ddct.png" height="100"  class="center" title="delta delta CT">
+
 
 <b>Demo</b>
 
