@@ -32,7 +32,7 @@ target:           float     ct values of target transcript.
 normalizer:       float     ct values of housekeeping transcript.
 ```
 
-<b>Fold expression</b>
+<b>Fold change</b>
 
 <img src="https://github.com/pkmklong/pycr/blob/master/images/ddct_bk.png" height="100"  class="center" title="delta delta CT">
 
