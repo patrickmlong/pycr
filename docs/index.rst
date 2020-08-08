@@ -30,7 +30,7 @@ Input data dictionary::
     normalizer:    float   ct values of housekeeping transcript.
 
 
-Fold expression
+Fold change
 
 .. image:: ../images/ddct_bk.png
   :width: 500
