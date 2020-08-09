@@ -32,7 +32,7 @@ Input data dictionary::
 
 Fold change
 
-.. image:: ../images/ddct_bk.png
+.. image:: ../images/ddct.svg
   :width: 500
   :alt: delta delta CT 
 
