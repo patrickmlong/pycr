@@ -1,7 +1,11 @@
 Pycr documentation
 =====================================
-A small utility package to automate relative quantification of mRNA from thermocycler ct data. Currently assumes perfect amplification efficiency and unpaired samples.
+A small utility package to automate relative quantification of mRNA from thermocycler ct data.
 
+.. note::
+    Currently assumes perfect amplification efficiency and unpaired samples.
+    
+    
 Installation::
 
     $ python -m pip install git+https://github.com/pkmklong/pycr.git
@@ -51,6 +55,7 @@ Demo::
   :width: 300
   :alt: Demo visualization 
 
+    
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
