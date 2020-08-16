@@ -1,6 +1,6 @@
 Pycr documentation
 =====================================
-A small utility package to automate relative quantification of mRNA from thermocycler ct data.
+A small utility package to automate relative quantification of mRNA from thermocycler cycle threshold (ct) data. Takes ct values from a control and test group,  computes the delta delta ct values for target gene and reference genes and records the fold change in gene expression. 
     
 Installation::
 
