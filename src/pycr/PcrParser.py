@@ -68,12 +68,34 @@ class PcrParser(object):
 
 
     def visualize_rt(self):
-        """WIP add visualization method"""
+        """Visualization fold change in target gene expression"""
 
         output = self.output_path +  ".png"
         logger.info(f"Saving output figure: {output}")
+
+        f, axes = plt.subplots(1, 2)
         sns.set(style = "white")
+
         sns.boxplot(x = "group",
-                    y =  "fold_change",
-                    data = self.rt_table)
-        plt.savefig(output, dpi=300)
+              y =  "fold_change",
+              data = self.rt_table,
+              ax=axes[0], width=.5, palette="GnBu")
+        sns.boxplot(x = "group",
+              y =  "normalizer",
+              data = self.rt_table,
+              ax=axes[1], width=.5, palette="GnBu")
+
+        sns.swarmplot(x = "group",
+              y =  "fold_change",
+              data = self.rt_table,
+              ax=axes[0], color=".25")
+        sns.swarmplot(x = "group",
+              y =  "normalizer",
+              data = self.rt_table,
+           ax=axes[1], color=".25")
+
+        plt.tight_layout()
+        sns.despine(left=True)
+        axes[0].set_ylabel('Fold Change')
+        axes[1].set_ylabel('Normalizer ct values')
+        f.savefig(output, dpi=300)
