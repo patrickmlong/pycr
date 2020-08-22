@@ -48,7 +48,7 @@ Demo::
 
 
 .. image:: ../images/demo_data_processed.png
-  :width: 300
+  :width: 500
   :alt: Demo visualization 
 
 
