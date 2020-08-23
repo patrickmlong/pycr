@@ -25,10 +25,10 @@ Running pycr::
 
 Input data dictionary::
 
-    {column name:                      type    description}
-    group:                             str     Names of comparison groups.
-    user defined target column:        float   ct values of target transcript.
-    user defined normalizing colum:    float   ct values of normalizing reference transcript.
+    {column:                            type    description}
+    "group":                            str     Names of comparison groups.
+    user defined target column:         float   ct values of target transcript.
+    user defined normalizing column:    float   ct values of normalizing reference transcript.
 
 
 Fold change:
