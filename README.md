@@ -27,10 +27,10 @@ Currently assumes perfect amplification efficiency and unpaired samples.
         
 <b>Input data dictionary</b>
 ```
-{column name:     type      description}
-group:            str       Name of experimental and control groups.
-target:           float     ct values of target transcript.
-normalizer:       float     ct values of housekeeping transcript.
+{column:                            type    description}
+"group":                            str     Names of comparison groups.
+user defined target column:         float   ct values of target transcript.
+user defined normalizing column:    float   ct values of normalizing reference transcript.
 ```
 
 <b>Fold change</b>
