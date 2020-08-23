@@ -1,7 +1,9 @@
 Pycr documentation
 =====================================
 A small utility package to automate relative quantification of mRNA from thermocycler cycle threshold (ct) data. Takes as input raw ct values for target and reference genes from experiment and control conditions and returns as output the fold changes in gene expression using the delta delta ct method. 
-    
+
+|dgr| 
+
 Installation::
 
     $ python -m pip install git+https://github.com/pkmklong/pycr.git
@@ -53,8 +55,11 @@ Demo::
 
 .. note::
     Currently assumes perfect amplification efficiency and unpaired samples.
-    
-    
+
+
+.. include:: isogrk1.txt
+
+
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
