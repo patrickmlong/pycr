@@ -67,6 +67,8 @@ class PcrParser(object):
         logger.info(f"Saving output table: {output}")
         self.rt_table.to_csv(output, index = False)
 
+        logger.info(f"\n {self.rt_table.sample(10).sort_values(by ='group').to_markdown()} \n ....")
+
 
     def visualize_rt(self):
         """Visualization fold change in target gene expression"""
