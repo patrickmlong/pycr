@@ -10,7 +10,7 @@ Running pycr::
 
     $ pycr -h
 
-        usage: pycr [-h] file_path experimental control
+        usage: pycr [-h] file_path control normalizer target
 
         positional arguments:
             file_path     The path to ct data (csv) for relative RNA quantification 
@@ -40,7 +40,7 @@ Fold change:
 
 Demo::
 
-    $ pycr  ./data/demo_data_extended.csv control 
+    $ pycr  ./data/demo_data_extended.csv control rpl19 egf1r
 
     INFO:pycr:Loading table: ./data/demo_data_extended.csv
     INFO:pycr:Formatting table
