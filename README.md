@@ -40,7 +40,7 @@ user defined normalizing column:    float   ct values of normalizing reference t
 
 <b>Demo</b>
 
-    $ pycr  ./data/demo_data_extended.csv control 
+    $ pycr  ./data/demo_data_extended.csv control rpl19 egf1r
 <br>    
 
     INFO:pycr:Loading table: ./data/demo_data_extended.csv
