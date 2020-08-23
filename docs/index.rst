@@ -45,24 +45,21 @@ Demo::
     INFO:pycr:Loading table: ./data/demo_data_extended.csv
     INFO:pycr:Formatting table
     INFO:pycr:Saving output table: data/demo_data_extended_processed.csv
-    INFO:pycr:Saving output figure: data/demo_data_extended_processed.png
-
-
-Outputs::
-
+    INFO:pycr:
     |    | group   |   rpl19 |   egf1r |   delta_ct |   delta_delta_ct |   fold_change |
     |---:|:--------|--------:|--------:|-----------:|-----------------:|--------------:|
+    |  1 | control | 16.9    | 25.8    |    8.9     |          0.3335  |      0.793609 |
     |  3 | control | 17.7    | 25.4    |    7.7     |         -0.8665  |      1.82323  |
-    |  8 | control | 16.9    | 26.316  |    9.416   |          0.8495  |      0.554977 |
-    |  7 | control | 17.5    | 26.112  |    8.612   |          0.0455  |      0.968954 |
-    | 11 | trt_a   | 17.3    | 25.398  |    8.098   |         -0.4685  |      1.38367  |
-    | 15 | trt_a   | 17.3    | 24.9    |    7.6     |         -0.9665  |      1.95409  |
-    | 18 | trt_b   | 17.9895 | 25.9498 |    7.96032 |         -0.60618 |      1.52222  |
+    |  2 | control | 17.4    | 26      |    8.6     |          0.0335  |      0.977047 |
+    |  6 | control | 17.7    | 25.908  |    8.208   |         -0.3585  |      1.28209  |
+    |  4 | control | 17.2    | 25.45   |    8.25    |         -0.3165  |      1.24531  |
+    | 17 | trt_a   | 17.4    | 24.786  |    7.386   |         -1.1805  |      2.26655  |
+    | 20 | trt_b   | 17.487  | 25.029  |    7.542   |         -1.0245  |      2.03425  |
     | 23 | trt_b   | 17.3865 | 25.647  |    8.2605  |         -0.306   |      1.23628  |
-    | 19 | trt_b   | 17.3865 | 26.1599 |    8.77344 |          0.20694 |      0.866373 |
-    | 24 | trt_b   | 17.3865 | 25.7397 |    8.3532  |         -0.2133  |      1.15934  |
-    | 25 | trt_b   | 17.487  | 25.5296 |    8.04258 |         -0.52392 |      1.43786  |
-    ...
+    | 18 | trt_b   | 17.9895 | 25.9498 |    7.96032 |         -0.60618 |      1.52222  |
+    | 22 | trt_b   | 17.9895 | 25.441  |    7.4515  |         -1.115   |      2.16595  | 
+     .... 
+    INFO:pycr:Saving output figure: data/demo_data_extended_processed.png
 
 
 .. image:: ../images/demo_data_extended_processed.png
