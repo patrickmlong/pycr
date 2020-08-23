@@ -27,8 +27,8 @@ Input data dictionary::
 
     {column:                            type    description}
     "group":                            str     Names of comparison groups.
-    user defined target column:         float   ct values of target transcript.
     user defined normalizing column:    float   ct values of normalizing reference transcript.
+    user defined target column:         float   ct values of target transcript.
 
 
 Fold change:
