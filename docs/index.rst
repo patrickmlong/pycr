@@ -46,7 +46,7 @@ Demo::
     INFO:pycr:Saving output figure: data/demo_data_extended_processed.png
 
 
-.. image:: ../images/demo_data_processed_extended.png
+.. image:: ../images/demo_data_extended_processed.png
   :width: 500
   :alt: Demo visualization 
 
