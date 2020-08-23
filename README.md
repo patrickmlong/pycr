@@ -41,7 +41,7 @@ normalizer:       float     ct values of housekeeping transcript.
     $ pycr  ./data/demo_data_extended.csv control 
 <br>    
 
-    INFO:pycr:Loading table: ./data/demo_data.csv
+    INFO:pycr:Loading table: ./data/demo_data_extended.csv
     INFO:pycr:Formatting table
     INFO:pycr:Saving output table: data/demo_data_extended_processed.csv
     INFO:pycr:Saving output figure: data/demo_data_extended_processed.png
