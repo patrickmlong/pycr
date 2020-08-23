@@ -63,7 +63,7 @@ user defined normalizing column:    float   ct values of normalizing reference t
 | 25 | trt_b   | 17.487  | 25.5296 |    8.04258 |         -0.52392 |      1.43786  |
 ...
 
-<b>Associated visual output</b>
+<b>Visual output</b>
 
 <img src="https://github.com/pkmklong/pycr/blob/master/images/demo_data_extended_processed.png" height="400"  class="center" title="Demo visualization">
 
