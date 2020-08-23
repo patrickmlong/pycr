@@ -13,16 +13,18 @@ Currently assumes perfect amplification efficiency and unpaired samples.
 <b>Command line</b>
 
     $ pycr -h
-    usage: pycr [-h] file_path experimental control
+    usage: pycr [-h] file_path control normalizer target
 
     positional arguments:
-      file_path     The path to a ct data (csv) for relative RNA quantification
-      control       The name of your control group
+        file_path     The path to ct data (csv) for relative RNA quantification
+        control       The name of your control group
+        normalizer    The name of your normalizing reference transcript
+        target        The name of your target transcript
 
     optional arguments:
-      -h, --help    show this help message and exit
-      
-
+        -h, --help    show this help message and exit
+        
+        
 <b>Input data dictionary</b>
 ```
 {column name:     type      description}
