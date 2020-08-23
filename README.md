@@ -46,7 +46,6 @@ user defined normalizing column:    float   ct values of normalizing reference t
     INFO:pycr:Loading table: ./data/demo_data_extended.csv
     INFO:pycr:Formatting table
     INFO:pycr:Saving output table: data/demo_data_extended_processed.csv
-    INFO:pycr:
     |    | group   |   rpl19 |   egf1r |   delta_ct |   delta_delta_ct |   fold_change |
     |---:|:--------|--------:|--------:|-----------:|-----------------:|--------------:|
     |  1 | control | 16.9    | 25.8    |    8.9     |          0.3335  |      0.793609 |
