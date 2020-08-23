@@ -64,10 +64,11 @@ class PcrParser(object):
         """Save output file suffixed with "_processed.csv"""
         
         output = self.output_path + ".csv"
-        logger.info(f"Saving output table: {output}")
+        logger.info(f"Saving output table: {output}" \
+        f"\n {self.rt_table.sample(10).sort_values(by ='group').to_markdown()} \n ....")
         self.rt_table.to_csv(output, index = False)
 
-        logger.info(f"\n {self.rt_table.sample(10).sort_values(by ='group').to_markdown()} \n ....")
+        #logger.info(f"\n {self.rt_table.sample(10).sort_values(by ='group').to_markdown()} \n ....")
 
 
     def visualize_rt(self):
