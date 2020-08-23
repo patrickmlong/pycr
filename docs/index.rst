@@ -15,8 +15,8 @@ Running pycr::
         positional arguments:
             file_path     The path to ct data (csv) for relative RNA quantification 
             control       The name of your control group
-            normalizer    The name of your normalizing reference gene
-            target        The name of your target gene
+            normalizer    The name of your normalizing reference transcript
+            target        The name of your target transcript
             
         optional arguments:
             -h, --help    show this help message and exit
@@ -25,10 +25,10 @@ Running pycr::
 
 Input data dictionary::
 
-    {column name:  type    description}
-    group:         str     Names of comparison groups.
-    target:        float   ct values of target transcript.
-    normalizer:    float   ct values of housekeeping transcript.
+    {column name:                      type    description}
+    group:                             str     Names of comparison groups.
+    user defined target column:        float   ct values of target transcript.
+    user defined normalizing colum:    float   ct values of normalizing reference transcript.
 
 
 Fold change:
