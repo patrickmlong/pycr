@@ -15,6 +15,8 @@ Running pycr::
         positional arguments:
             file_path     The path to ct data (csv) for relative RNA quantification 
             control       The name of your control group
+            normalizer    The name of your normalizing reference gene
+            target        The name of your target gene
             
         optional arguments:
             -h, --help    show this help message and exit
