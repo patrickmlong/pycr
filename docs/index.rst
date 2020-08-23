@@ -14,7 +14,6 @@ Running pycr::
 
         positional arguments:
             file_path     The path to ct data (csv) for relative RNA quantification 
-            experimental  The name of your experimental group
             control       The name of your control group
             
         optional arguments:
@@ -25,7 +24,7 @@ Running pycr::
 Input data dictionary::
 
     {column name:  type    description}
-    group:         str     Names of comparison groups. Assumes bivariate analysis.
+    group:         str     Names of comparison groups.
     target:        float   ct values of target transcript.
     normalizer:    float   ct values of housekeeping transcript.
 
@@ -39,15 +38,15 @@ Fold change:
 
 Demo::
 
-    $ pycr  ./data/demo_data.csv treatment no_treatment
+    $ pycr  ./data/demo_data_extended.csv control 
 
-    INFO:pycr:Loading table: ./data/demo_data.csv
+    INFO:pycr:Loading table: ./data/demo_data_extended.csv
     INFO:pycr:Formatting table
-    INFO:pycr:Saving output table: data/demo_data_processed.csv
-    INFO:pycr:Saving output figure: data/demo_data_processed.png
+    INFO:pycr:Saving output table: data/demo_data_extended_processed.csv
+    INFO:pycr:Saving output figure: data/demo_data_extended_processed.png
 
 
-.. image:: ../images/demo_data_processed.png
+.. image:: ../images/demo_data_processed_extended.png
   :width: 500
   :alt: Demo visualization 
 

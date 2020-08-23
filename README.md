@@ -17,7 +17,6 @@ Currently assumes perfect amplification efficiency and unpaired samples.
 
     positional arguments:
       file_path     The path to a ct data (csv) for relative RNA quantification
-      experimental  The name of your experimental group
       control       The name of your control group
 
     optional arguments:
@@ -27,7 +26,7 @@ Currently assumes perfect amplification efficiency and unpaired samples.
 <b>Input data dictionary</b>
 ```
 {column name:     type      description}
-group:            str       Name of experimental and control groups. Assumes bivariate analysis.
+group:            str       Name of experimental and control groups.
 target:           float     ct values of target transcript.
 normalizer:       float     ct values of housekeeping transcript.
 ```
@@ -39,17 +38,17 @@ normalizer:       float     ct values of housekeeping transcript.
 
 <b>Demo</b>
 
-    $ pycr  ./data/demo_data.csv treatment no_treatment
+    $ pycr  ./data/demo_data_extended.csv control 
 <br>    
 
     INFO:pycr:Loading table: ./data/demo_data.csv
     INFO:pycr:Formatting table
-    INFO:pycr:Saving output table: data/demo_data_processed.csv
-    INFO:pycr:Saving output figure: data/demo_data_processed.png
+    INFO:pycr:Saving output table: data/demo_data_extended_processed.csv
+    INFO:pycr:Saving output figure: data/demo_data_extended_processed.png
 
 <b>Demo visualization</b>
 
-<img src="https://github.com/pkmklong/pycr/blob/master/images/demo_data_processed.png" height="300"  class="center" title="Demo visualization">
+<img src="https://github.com/pkmklong/pycr/blob/master/images/demo_data_extended_processed.png" height="300"  class="center" title="Demo visualization">
 
 
 Note
