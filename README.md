@@ -45,20 +45,21 @@ user defined normalizing column:    float   ct values of normalizing reference t
 
     INFO:pycr:Loading table: ./data/demo_data_extended.csv
     INFO:pycr:Formatting table
+    INFO:pycr:Saving output table: data/demo_data_extended_processed.csv
     INFO:pycr:
     |    | group   |   rpl19 |   egf1r |   delta_ct |   delta_delta_ct |   fold_change |
     |---:|:--------|--------:|--------:|-----------:|-----------------:|--------------:|
-    |  8 | control | 16.9    | 26.316  |    9.416   |          0.8495  |      0.554977 |
-    |  9 | control | 17.4    | 26.52   |    9.12    |          0.5535  |      0.681365 |
+    |  1 | control | 16.9    | 25.8    |    8.9     |          0.3335  |      0.793609 |
+    |  3 | control | 17.7    | 25.4    |    7.7     |         -0.8665  |      1.82323  |
     |  2 | control | 17.4    | 26      |    8.6     |          0.0335  |      0.977047 |
     |  6 | control | 17.7    | 25.908  |    8.208   |         -0.3585  |      1.28209  |
     |  4 | control | 17.2    | 25.45   |    8.25    |         -0.3165  |      1.24531  |
-    | 14 | trt_a   | 17.9    | 24.7    |    6.8     |         -1.7665  |      3.40228  |
-    | 22 | trt_b   | 17.9895 | 25.441  |    7.4515  |         -1.115   |      2.16595  |
+    | 17 | trt_a   | 17.4    | 24.786  |    7.386   |         -1.1805  |      2.26655  |
+    | 20 | trt_b   | 17.487  | 25.029  |    7.542   |         -1.0245  |      2.03425  |
     | 23 | trt_b   | 17.3865 | 25.647  |    8.2605  |         -0.306   |      1.23628  |
-    | 24 | trt_b   | 17.3865 | 25.7397 |    8.3532  |         -0.2133  |      1.15934  |
     | 18 | trt_b   | 17.9895 | 25.9498 |    7.96032 |         -0.60618 |      1.52222  |
-    INFO:pycr:Saving output table: data/demo_data_extended_processed.csv
+    | 22 | trt_b   | 17.9895 | 25.441  |    7.4515  |         -1.115   |      2.16595  | 
+     ....
     INFO:pycr:Saving output figure: data/demo_data_extended_processed.png
 
 
