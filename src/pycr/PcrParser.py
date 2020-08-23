@@ -15,9 +15,11 @@ class PcrParser(object):
     """
 
 
-    def __init__(self, file_path, control):
+    def __init__(self, file_path, control, normalizer, target):
         self.file_path = file_path
         self.control = control
+        self.normalizer = normalizer
+        self.target = target
         self.rt_table = pd.DataFrame()
         self.output_path = f"{Path(file_path).parents[0]}" \
         f"/{Path(file_path).stem}_processed"
@@ -33,7 +35,7 @@ class PcrParser(object):
             import pdb; pdb.set_trace()
         	
         try:
-            self.rt_table = self.rt_table.loc[:,["group", "target", "normalizer"]]
+            self.rt_table = self.rt_table.loc[:,["group", self.normalizer, self.target]]
         except:
             logger.info("Columns: group, target, an/or normalizer not in table " \
                   f"columns:{self.rt_table.columns}")
@@ -44,9 +46,9 @@ class PcrParser(object):
         """Calculate relative mRNA levels using delta delta ct"""
         
         logger.info("Formatting table")
-
+        
         self.rt_table["delta_ct"] = \
-        self.rt_table.target - self.rt_table.normalizer
+        self.rt_table[self.target] - self.rt_table[self.normalizer]
 
         avg_delta_ct_control = \
         self.rt_table[self.rt_table.group == self.control].delta_ct.mean()
@@ -80,7 +82,7 @@ class PcrParser(object):
               data = self.rt_table,
               ax=axes[0], width=.5, palette="GnBu")
         sns.boxplot(x = "group",
-              y =  "normalizer",
+              y =  self.normalizer,
               data = self.rt_table,
               ax=axes[1], width=.5, palette="GnBu")
 
@@ -89,14 +91,14 @@ class PcrParser(object):
               data = self.rt_table,
               ax=axes[0], color=".25")
         sns.swarmplot(x = "group",
-              y =  "normalizer",
+              y =  self.normalizer,
               data = self.rt_table,
            ax=axes[1], color=".25")
 
         plt.tight_layout()
         sns.despine(left=True)
-        axes[0].set_ylabel('Fold Change')
-        axes[1].set_ylabel('Normalizer ct values')
+        axes[0].set_ylabel(f'{self.target} fold change')
+        axes[1].set_ylabel(f'{self.normalizer} ct values')
         axes[0].tick_params(labelrotation=45)
         axes[1].tick_params(labelrotation=45)
         f.savefig(output, dpi=300, bbox_inches="tight")
