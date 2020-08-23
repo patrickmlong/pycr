@@ -12,9 +12,20 @@ def main():
     parser.add_argument("control",
 	help = "The name of your control group",
 	type = str)
+    parser.add_argument("normalizer",
+	help = "The name of your control group",
+	type = str)
+    parser.add_argument("target",
+	help = "The name of your control group",
+	type = str)
+
+
 
     args = parser.parse_args()
-    rna_parser = PcrParser(args.file_path, args.control)
+    rna_parser = PcrParser(args.file_path,
+                           args.control,
+                           args.normalizer,
+                           args.target)
     
     input_table = rna_parser.input_table()
     input_table = rna_parser.format_table()
