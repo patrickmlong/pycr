@@ -13,13 +13,11 @@ def main():
 	help = "The name of your control group",
 	type = str)
     parser.add_argument("normalizer",
-	help = "The name of your control group",
+	help = "The name of your normalizing reference transcript",
 	type = str)
     parser.add_argument("target",
-	help = "The name of your control group",
-	type = str)
-
-
+	help = "The name of your target transcript",
+	type = str)      
 
     args = parser.parse_args()
     rna_parser = PcrParser(args.file_path,
