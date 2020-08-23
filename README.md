@@ -63,7 +63,7 @@ user defined normalizing column:    float   ct values of normalizing reference t
     INFO:pycr:Saving output figure: data/demo_data_extended_processed.png
 
 
-<b>Saved visuals</b>
+<b>Visuals</b>
 
 <img src="https://github.com/pkmklong/pycr/blob/master/images/demo_data_extended_processed.png" height="400"  class="center" title="Demo visualization">
 
