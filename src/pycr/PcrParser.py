@@ -15,9 +15,8 @@ class PcrParser(object):
     """
 
 
-    def __init__(self, file_path, experimental, control):
+    def __init__(self, file_path, control):
         self.file_path = file_path
-        self.experimental = experimental
         self.control = control
         self.rt_table = pd.DataFrame()
         self.output_path = f"{Path(file_path).parents[0]}" \
@@ -98,4 +97,6 @@ class PcrParser(object):
         sns.despine(left=True)
         axes[0].set_ylabel('Fold Change')
         axes[1].set_ylabel('Normalizer ct values')
-        f.savefig(output, dpi=300)
+        axes[0].tick_params(labelrotation=45)
+        axes[1].tick_params(labelrotation=45)
+        f.savefig(output, dpi=300, bbox_inches="tight")

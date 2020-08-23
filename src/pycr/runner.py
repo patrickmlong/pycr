@@ -6,11 +6,7 @@ from pycr.pcrparser import PcrParser
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("file_path", 
-	help = "The path to a ct data (csv) for relative RNA quantification",
-	type = str)
-	
-    parser.add_argument("experimental",
-	help = "The name of your experimental group",
+	help = "The path to ct data (csv) for relative RNA quantification",
 	type = str)
 	
     parser.add_argument("control",
@@ -18,7 +14,7 @@ def main():
 	type = str)
 
     args = parser.parse_args()
-    rna_parser = PcrParser(args.file_path,args.experimental, args.control)
+    rna_parser = PcrParser(args.file_path, args.control)
     
     input_table = rna_parser.input_table()
     input_table = rna_parser.format_table()
