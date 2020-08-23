@@ -58,7 +58,7 @@ Demo::
     | 23 | trt_b   | 17.3865 | 25.647  |    8.2605  |         -0.306   |      1.23628  |
     | 18 | trt_b   | 17.9895 | 25.9498 |    7.96032 |         -0.60618 |      1.52222  |
     | 22 | trt_b   | 17.9895 | 25.441  |    7.4515  |         -1.115   |      2.16595  | 
-    .... 
+     .... 
     INFO:pycr:Saving output figure: data/demo_data_extended_processed.png
 
 
