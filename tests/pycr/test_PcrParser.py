@@ -8,9 +8,10 @@ class PcrParserMock(PcrParser):
     def __init__(*args, **kwards):
         pass
 
-
-df_input = pd.read_csv("./data/test_data.csv")
-df_expected = pd.read_csv("./data/test_expected.csv")
+import os
+cur_path = f"{os.path.dirname(__file__)}/data/"
+df_input = pd.read_csv(f"{cur_path}test_data.csv")
+df_expected = pd.read_csv(f"{cur_path}test_expected.csv")
 
 
 @pytest.mark.skip(reason="not yet written")
