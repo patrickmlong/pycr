@@ -39,8 +39,7 @@ class PcrParser(object):
             df = pd.read_csv(Path(self.file_path))
         except OSError:
             print(f"File {self.file_path} not found")
-            import pdb; pdb.set_trace()
-            
+            import pdb; pdb.set_trace()       
         try:
             df = df.loc[:,["group", self.normalizer, self.target]]
         except:
