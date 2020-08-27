@@ -14,7 +14,6 @@ class PcrParser(object):
     RNA expression is calculated using the delta Ct method.  
     """
 
-
     def __init__(self, file_path, control, normalizer, target):
         self.file_path = file_path
         self.control = control
@@ -70,7 +69,7 @@ class PcrParser(object):
         return df
 
       
-    def save_table_to_csv(self, df, output_path):
+    def save_table_to_csv(self, df, output_path) -> None:
         """Save output file suffixed with "_processed.csv"""
         
         output = output_path + ".csv"
@@ -80,7 +79,7 @@ class PcrParser(object):
         df.to_csv(output, index = False)
 
 
-    def visualize_rt(self, df: pd.DataFrame, output_path: str):
+    def visualize_rt(self, df: pd.DataFrame, output_path: str) -> None:
         """Visualization fold change in target gene expression"""
 
         output = output_path +  ".png"
