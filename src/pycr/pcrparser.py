@@ -32,13 +32,9 @@ class PcrParser(object):
       
     def load_table(self) -> pd.DataFrame:
         """"Load input table and format appropriate headers"""
+        
         logger.info(f"Loading table: {self.file_path}")
-
-        try:
-            df = pd.read_csv(Path(self.file_path))
-        except OSError:
-            print(f"File {self.file_path} not found")
-            #import pdb; pdb.set_trace()       
+        
         try:
             df = df.loc[:,["group", self.normalizer, self.target]]
         except AttributeError:
