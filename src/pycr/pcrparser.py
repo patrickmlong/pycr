@@ -14,7 +14,7 @@ class PcrParser(object):
     RNA expression is calculated using the delta Ct method.  
     """
 
-    def __init__(self, file_path, control, normalizer, target):
+    def __init__(self, file_path: str, control: str, normalizer: str, target: str):
         self.file_path = file_path
         self.control = control
         self.normalizer = normalizer
@@ -69,7 +69,7 @@ class PcrParser(object):
         return df
 
       
-    def save_table_to_csv(self, df, output_path) -> None:
+    def save_table_to_csv(self, df: pd.DataFrame, output_path: str) -> None:
         """Save output file suffixed with "_processed.csv"""
         
         output = output_path + ".csv"
