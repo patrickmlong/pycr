@@ -69,7 +69,9 @@ Demo::
 .. note::
     Currently assumes perfect amplification efficiency and unpaired samples.
 
-
+.. image:: https://codecov.io/gh/pkmklong/pycr/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/pkmklong/pycr
+  
 .. include:: isogrk1.txt
 
 
