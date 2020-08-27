@@ -34,6 +34,7 @@ class PcrParser(object):
         """"Load input table and format appropriate headers"""
         
         logger.info(f"Loading table: {self.file_path}")
+        df = pd.read_csv(Path(self.file_path))
         
         try:
             df = df.loc[:,["group", self.normalizer, self.target]]
