@@ -31,19 +31,22 @@ class PcrParser(object):
 
       
     def load_table(self) -> pd.DataFrame:
-        """"Load input table and format appropriate headers"""
+        """"Load input table"""
         
         logger.info(f"Loading table: {self.file_path}")
         df = pd.read_csv(Path(self.file_path))
         
+        return df
+        
+    def check_columns(self, df: pd.DataFrame) -> None:
+        """"Check input table columns"""
+
         try:
             df = df.loc[:,["group", self.normalizer, self.target]]
         except AttributeError:
             logger.info("Columns: group, target, an/or normalizer not in table " \
                   f"columns:{df.columns}")
             #import pdb; pdb.set_trace()
-
-        return df
 
 
     def format_table(self, df: pd.DataFrame) -> pd.DataFrame:
