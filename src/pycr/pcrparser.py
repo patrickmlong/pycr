@@ -33,7 +33,6 @@ class PcrParser(object):
         except OSError:
             print(f"File {self.file_path} not found")
             import pdb; pdb.set_trace()
-        	
         try:
             self.rt_table = self.rt_table.loc[:,["group", self.normalizer, self.target]]
         except:
@@ -67,8 +66,6 @@ class PcrParser(object):
         logger.info(f"Saving output table: {output}" \
         f"\n {self.rt_table.sample(10).sort_values(by ='group').to_markdown()} \n ....")
         self.rt_table.to_csv(output, index = False)
-
-        #logger.info(f"\n {self.rt_table.sample(10).sort_values(by ='group').to_markdown()} \n ....")
 
 
     def visualize_rt(self):
