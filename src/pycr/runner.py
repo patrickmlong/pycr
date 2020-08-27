@@ -17,18 +17,19 @@ def main():
 	type = str)
     parser.add_argument("target",
 	help = "The name of your target transcript",
-	type = str)      
+	type = str)
 
     args = parser.parse_args()
     rna_parser = PcrParser(args.file_path,
                            args.control,
                            args.normalizer,
                            args.target)
-    
-    input_table = rna_parser.input_table()
-    input_table = rna_parser.format_table()
-    rna_parser.save_table_to_csv()
-    rna_parser.visualize_rt() 
+
+    input_table = rna_parser.load_table()
+    formatted_table = rna_parser.format_table(input_table)
+    output_path = rna_parser.make_output_path()
+    rna_parser.save_table_to_csv(formatted_table, output_path)
+    rna_parser.visualize_rt(formatted_table, output_path)
 
 if __name__=='__main__':
 	main()
