@@ -41,7 +41,7 @@ class PcrParser(object):
             import pdb; pdb.set_trace()       
         try:
             df = df.loc[:,["group", self.normalizer, self.target]]
-        except:
+        except AttributeError:
             logger.info("Columns: group, target, an/or normalizer not in table " \
                   f"columns:{df.columns}")
             import pdb; pdb.set_trace()
