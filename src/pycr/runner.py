@@ -26,6 +26,7 @@ def main():
                            args.target)
 
     input_table = rna_parser.load_table()
+    rna_parser.check_columns(input_table)
     formatted_table = rna_parser.format_table(input_table)
     output_path = rna_parser.make_output_path()
     rna_parser.save_table_to_csv(formatted_table, output_path)
