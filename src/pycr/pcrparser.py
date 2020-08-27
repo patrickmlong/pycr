@@ -20,58 +20,71 @@ class PcrParser(object):
         self.control = control
         self.normalizer = normalizer
         self.target = target
-        self.rt_table = pd.DataFrame()
-        self.output_path = f"{Path(file_path).parents[0]}" \
-        f"/{Path(file_path).stem}_processed"
 
 
-    def input_table(self):
+    def make_output_path(self) -> str:
+        """Create output path results"""
+        
+        output_path = f"{Path(self.file_path).parents[0]}" \
+        f"/{Path(self.file_path).stem}_processed"
+        
+        return output_path
+
+      
+    def load_table(self) -> pd.DataFrame:
         """"Load input table and format appropriate headers"""
         logger.info(f"Loading table: {self.file_path}")
+
         try:
-            self.rt_table = pd.read_csv(Path(self.file_path))
+            df = pd.read_csv(Path(self.file_path))
         except OSError:
             print(f"File {self.file_path} not found")
             import pdb; pdb.set_trace()
+            
         try:
-            self.rt_table = self.rt_table.loc[:,["group", self.normalizer, self.target]]
+            df = df.loc[:,["group", self.normalizer, self.target]]
         except:
             logger.info("Columns: group, target, an/or normalizer not in table " \
-                  f"columns:{self.rt_table.columns}")
+                  f"columns:{df.columns}")
             import pdb; pdb.set_trace()
 
+        return df
 
-    def format_table(self):
+
+    def format_table(self, df: pd.DataFrame) -> pd.DataFrame:
         """Calculate relative mRNA levels using delta delta ct"""
         
-        logger.info("Formatting table")
+        logger.info("Formatting table...")
         
-        self.rt_table["delta_ct"] = \
-        self.rt_table[self.target] - self.rt_table[self.normalizer]
+        df["delta_ct"] = \
+        df[self.target] - df[self.normalizer]
 
         avg_delta_ct_control = \
-        self.rt_table[self.rt_table.group == self.control].delta_ct.mean()
+        df[df.group == self.control].delta_ct.mean()
         
-        self.rt_table["delta_delta_ct"] = \
-        self.rt_table.delta_ct - avg_delta_ct_control
+        df["delta_delta_ct"] = \
+        df.delta_ct - avg_delta_ct_control
 
-        self.rt_table["fold_change"] = \
-        2 ** (-self.rt_table.delta_delta_ct)
+        df["fold_change"] = \
+        2 ** (-df.delta_delta_ct)
 
+        return df
 
-    def save_table_to_csv(self):
+      
+    def save_table_to_csv(self, df, output_path):
         """Save output file suffixed with "_processed.csv"""
         
-        output = self.output_path + ".csv"
+        output = output_path + ".csv"
         logger.info(f"Saving output table: {output}" \
-        f"\n {self.rt_table.sample(10).sort_values(by ='group').to_markdown()} \n ....")
-        self.rt_table.to_csv(output, index = False)
+
+        f"\n {df.sample(10).sort_values(by ='group').to_markdown()} \n ....")
+        df.to_csv(output, index = False)
 
 
-    def visualize_rt(self):
+    def visualize_rt(self, df: pd.DataFrame, output_path: str):
         """Visualization fold change in target gene expression"""
 
-        output = self.output_path +  ".png"
+        output = output_path +  ".png"
         logger.info(f"Saving output figure: {output}")
 
         f, axes = plt.subplots(1, 2)
@@ -79,20 +92,20 @@ class PcrParser(object):
 
         sns.boxplot(x = "group",
               y =  "fold_change",
-              data = self.rt_table,
+              data = df,
               ax=axes[0], width=.5, palette="GnBu")
         sns.boxplot(x = "group",
               y =  self.normalizer,
-              data = self.rt_table,
+              data = df,
               ax=axes[1], width=.5, palette="GnBu")
 
         sns.swarmplot(x = "group",
               y =  "fold_change",
-              data = self.rt_table,
+              data = df,
               ax=axes[0], color=".25")
         sns.swarmplot(x = "group",
               y =  self.normalizer,
-              data = self.rt_table,
+              data = df,
            ax=axes[1], color=".25")
 
         plt.tight_layout()
