@@ -26,7 +26,7 @@ class PcrParser:
 
     def make_output_path(self) -> str:
         """Create output path results
-        
+
         Returns:
             str: save path for ddct analysis outputs
         """
@@ -39,10 +39,10 @@ class PcrParser:
         return output_path
 
     def load_table(self) -> pd.DataFrame:
-        """"Load input table
-        
+        """ "Load input table
+
         Returns:
-            pd.DataFrame: raw ct table for analysis   
+            pd.DataFrame: raw ct table for analysis
         """
 
         LOGGER.info(f" Loading table: {self.file_path}")
@@ -52,10 +52,10 @@ class PcrParser:
 
     def check_columns(self, df: pd.DataFrame) -> None:
         """ "Check input table columns
-        
+
         Args:
             df (pd.DataFrame): Raw ct values input table
-        
+
         Raises:
             KeyError: Error occurs if columns are not found
         """
@@ -72,11 +72,11 @@ class PcrParser:
 
     def calculate_ddct(self, df: pd.DataFrame) -> pd.DataFrame:
         """Calculate relative mRNA levels using delta delta ct
-        
+
         Args:
             df (pd.DataFrame): Raw ct values input dataframe
-        
-        Returns:  
+
+        Returns:
             (pd.DataFrame): delta delta ct table with fold change(s) in target gene expression
         """
 
@@ -95,14 +95,14 @@ class PcrParser:
     @staticmethod
     def save_table_to_csv(df: pd.DataFrame, output_path: str) -> IO:
         """Save output file suffixed with "_processed.csv
-        
+
         Args:
             df (pd.DataFrame): Raw ct values dataframe
-        
-        Returns:  
+
+        Returns:
             None
-        
-        IO: 
+
+        IO:
             csv: delta delta ct table with fold change(s) in target gene expression
         """
 
@@ -115,16 +115,16 @@ class PcrParser:
 
     def visualize_rt(self, df: pd.DataFrame, output_path: str) -> IO:
         """Visualization fold change in target gene expression
-         
+
         Args:
             df (pd.DataFrame): Raw ct values dataframe
             output_path (str): file save path
-        
-        Returns:  
+
+        Returns:
             None
-        
-        IO: 
-            png: matplotlib.figure of relative target gene expression expressed as fold change      
+
+        IO:
+            png: matplotlib.figure of relative target gene expression expressed as fold change
         """
 
         output = output_path + ".png"
