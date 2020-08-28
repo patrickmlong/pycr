@@ -38,6 +38,7 @@ class PcrParser(object):
         
         return df
         
+        
     def check_columns(self, df: pd.DataFrame) -> None:
         """"Check input table columns"""
 
@@ -50,7 +51,7 @@ class PcrParser(object):
             raise
 
 
-    def format_table(self, df: pd.DataFrame) -> pd.DataFrame:
+    def calculate_ddct(self, df: pd.DataFrame) -> pd.DataFrame:
         """Calculate relative mRNA levels using delta delta ct"""
         
         logger.info("Formatting table...")
