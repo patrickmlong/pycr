@@ -56,6 +56,9 @@ class PcrParser:
         Args:
             df (pd.DataFrame): Raw ct values input table
         
+        Returns:
+            None
+        
         Raises:
             KeyError: Error occurs if columns are not found
         """
