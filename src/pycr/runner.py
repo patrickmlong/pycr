@@ -33,4 +33,6 @@ def main():
     rna_parser.visualize_rt(ddct_table, output_path)
 
 if __name__=='__main__':
+    """Entry point for console_scripts
+    """
 	main()
