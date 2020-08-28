@@ -45,9 +45,9 @@ user defined normalizing column:    float   ct values of normalizing reference t
     $ pycr  ./data/demo_data_extended.csv control rpl19 egf1r
 <br>    
 
-    INFO:pycr:Loading table: ./data/demo_data_extended.csv
-    INFO:pycr:Formatting table
-    INFO:pycr:Saving output table: data/demo_data_extended_processed.csv
+    INFO:pycr: Loading table: ./data/demo_data_extended.csv
+    INFO:pycr: calculate_delta delta ct
+    INFO:pycr: Saving output table: data/demo_data_extended_processed.csv
     |    | group   |   rpl19 |   egf1r |   delta_ct |   delta_delta_ct |   fold_change |
     |---:|:--------|--------:|--------:|-----------:|-----------------:|--------------:|
     |  1 | control | 16.9    | 25.8    |    8.9     |          0.3335  |      0.793609 |
@@ -61,7 +61,7 @@ user defined normalizing column:    float   ct values of normalizing reference t
     | 18 | trt_b   | 17.9895 | 25.9498 |    7.96032 |         -0.60618 |      1.52222  |
     | 22 | trt_b   | 17.9895 | 25.441  |    7.4515  |         -1.115   |      2.16595  | 
      ....
-    INFO:pycr:Saving output figure: data/demo_data_extended_processed.png
+    INFO:pycr: Saving output figure: data/demo_data_extended_processed.png
 
 
 <b>Visuals</b>
