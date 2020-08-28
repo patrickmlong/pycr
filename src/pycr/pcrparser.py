@@ -77,7 +77,7 @@ class PcrParser:
             df (pd.DataFrame): Raw ct values input dataframe
         
         Returns:  
-            (pd.DataFrame): delta delta ct table with fold change(s) in target gene expression
+            pd.DataFrame: delta delta ct table with fold change(s) in target gene expression
         """
 
         LOGGER.info(" Calculated delta delta ct...")
