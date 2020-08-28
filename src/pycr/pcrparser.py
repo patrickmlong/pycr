@@ -54,7 +54,7 @@ class PcrParser(object):
     def calculate_ddct(self, df: pd.DataFrame) -> pd.DataFrame:
         """Calculate relative mRNA levels using delta delta ct"""
         
-        logger.info("Formatting table...")
+        logger.info("Calculated delta delta ct...")
         
         df["delta_ct"] = \
         df[self.target] - df[self.normalizer]
