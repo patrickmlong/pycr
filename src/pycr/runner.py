@@ -1,5 +1,4 @@
 import argparse
-import logging
 from pycr.pcrparser import PcrParser
 
 
