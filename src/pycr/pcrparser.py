@@ -16,7 +16,9 @@ class PcrParser:
     RNA expression is calculated using the delta Ct method.
     """
 
-    def __init__(self, file_path: str, control: str, normalizer: str, target: str) -> None:
+    def __init__(
+        self, file_path: str, control: str, normalizer: str, target: str
+    ) -> None:
         self.file_path = file_path
         self.control = control
         self.normalizer = normalizer
