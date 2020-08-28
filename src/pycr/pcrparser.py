@@ -55,14 +55,10 @@ class PcrParser:
 
         Args:
             df (pd.DataFrame): Raw ct values input table
-<<<<<<< HEAD
-
-=======
         
         Returns:
             None
-        
->>>>>>> 99ce18aae5bccd75e18a0af7b5ac1b3f08d98ded
+            
         Raises:
             KeyError: Error occurs if columns are not found
         """
@@ -82,15 +78,9 @@ class PcrParser:
 
         Args:
             df (pd.DataFrame): Raw ct values input dataframe
-<<<<<<< HEAD
-
-        Returns:
-            (pd.DataFrame): delta delta ct table with fold change(s) in target gene expression
-=======
         
         Returns:  
             pd.DataFrame: delta delta ct table with fold change(s) in target gene expression
->>>>>>> 99ce18aae5bccd75e18a0af7b5ac1b3f08d98ded
         """
 
         LOGGER.info(" Calculated delta delta ct...")
