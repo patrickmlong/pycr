@@ -33,7 +33,7 @@ class PcrParser(object):
     def load_table(self) -> pd.DataFrame:
         """"Load input table"""
         
-        logger.info(f"Loading table: {self.file_path}")
+        logger.info(f" Loading table: {self.file_path}")
         df = pd.read_csv(Path(self.file_path))
         
         return df
@@ -45,7 +45,7 @@ class PcrParser(object):
         try:
             df = df.loc[:,["group", self.normalizer, self.target]]
         except KeyError:
-            logger.info("Columns: group, target, an/or normalizer not in table " \
+            logger.info(" Columns: group, target, an/or normalizer not in table " \
                   f"columns:{df.columns}")
             #import pdb; pdb.set_trace()
             raise
@@ -54,7 +54,7 @@ class PcrParser(object):
     def calculate_ddct(self, df: pd.DataFrame) -> pd.DataFrame:
         """Calculate relative mRNA levels using delta delta ct"""
         
-        logger.info("Calculated delta delta ct...")
+        logger.info(" Calculated delta delta ct...")
         
         df["delta_ct"] = \
         df[self.target] - df[self.normalizer]
@@ -75,7 +75,7 @@ class PcrParser(object):
         """Save output file suffixed with "_processed.csv"""
         
         output = output_path + ".csv"
-        logger.info(f"Saving output table: {output}" \
+        logger.info(f" Saving output table: {output}" \
 
         f"\n {df.sample(10).sort_values(by ='group').to_markdown()} \n ....")
         df.to_csv(output, index = False)
@@ -85,7 +85,7 @@ class PcrParser(object):
         """Visualization fold change in target gene expression"""
 
         output = output_path +  ".png"
-        logger.info(f"Saving output figure: {output}")
+        logger.info(f" Saving output figure: {output}")
 
         f, axes = plt.subplots(1, 2)
         sns.set(style = "white")
