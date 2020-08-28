@@ -43,7 +43,17 @@ class PcrParser:
         return df
 
     def check_columns(self, df: pd.DataFrame) -> None:
-        """"Check input table columns"""
+        """"Check input table columns
+        
+        Parameters
+        __________
+        df : pd.DataFrame
+            Raw ct values input dataframe
+            
+        Returns
+        _______
+        None
+        """
 
         try:
             df = df.loc[:, ["group", self.normalizer, self.target]]
@@ -56,7 +66,18 @@ class PcrParser:
             raise
 
     def calculate_ddct(self, df: pd.DataFrame) -> pd.DataFrame:
-        """Calculate relative mRNA levels using delta delta ct"""
+        """Calculate relative mRNA levels using delta delta ct
+        
+        Parameters
+        __________
+        df : pd.DataFrame
+            Raw ct values input dataframe
+            
+        Returns
+        _______
+        pd.DataFrame
+            delta delta ct table with fold change(s) in target gene expression
+        """
 
         LOGGER.info(" Calculated delta delta ct...")
 
