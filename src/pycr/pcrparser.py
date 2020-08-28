@@ -43,13 +43,13 @@ class PcrParser:
         return df
 
     def check_columns(self, df: pd.DataFrame) -> None:
-        """"Check input table columns
-        
+        """ "Check input table columns
+
         Parameters
         __________
         df : pd.DataFrame
             Raw ct values input dataframe
-            
+
         Returns
         _______
         None
@@ -67,12 +67,12 @@ class PcrParser:
 
     def calculate_ddct(self, df: pd.DataFrame) -> pd.DataFrame:
         """Calculate relative mRNA levels using delta delta ct
-        
+
         Parameters
         __________
         df : pd.DataFrame
             Raw ct values input dataframe
-            
+
         Returns
         _______
         pd.DataFrame
