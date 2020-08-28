@@ -6,7 +6,7 @@ def main():
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "file_path",
-        help="The path to ct data (csv) for relative RNA quantification",
+        help="The path to raw ct data (csv) for relative RNA quantification",
         type=str,
     )
 
