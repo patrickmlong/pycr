@@ -10,12 +10,12 @@ df_input = pd.read_csv(f"{cur_path}test_data.csv")
 df_expected = pd.read_csv(f"{cur_path}test_expected.csv")
 
 
-#@pytest.mark.skip(reason="not yet written")
+# @pytest.mark.skip(reason="not yet written")
 def test_check_columns():
     p = PcrParser.__new__(PcrParser)
     p.normalizer = "rpl19"
     p.target = "egf1r"
-    df = pd.DataFrame(columns = ["group", "rpl19", "not_expected"])
+    df = pd.DataFrame(columns=["group", "rpl19", "not_expected"])
     with pytest.raises(KeyError):
         result = p.check_columns(df)
 
