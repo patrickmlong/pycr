@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from pathlib import Path
 import logging
+from typing import IO
 
 logging.basicConfig(level=logging.INFO)
 LOGGER = logging.getLogger("pycr")
@@ -68,7 +69,7 @@ class PcrParser:
         return df
 
     @staticmethod
-    def save_table_to_csv(df: pd.DataFrame, output_path: str) -> None:
+    def save_table_to_csv(df: pd.DataFrame, output_path: str) -> IO:
         """Save output file suffixed with "_processed.csv"""
 
         output = output_path + ".csv"
@@ -78,7 +79,7 @@ class PcrParser:
         )
         df.to_csv(output, index=False)
 
-    def visualize_rt(self, df: pd.DataFrame, output_path: str) -> None:
+    def visualize_rt(self, df: pd.DataFrame, output_path: str) -> IO:
         """Visualization fold change in target gene expression"""
 
         output = output_path + ".png"
