@@ -43,7 +43,7 @@ Demo::
     $ pycr  ./data/demo_data_extended.csv control rpl19 egf1r
 
     INFO:pycr: Loading table: ./data/demo_data_extended.csv
-    INFO:pycr: Calculated delta delta ct...
+    INFO:pycr: Calculating delta delta ct
     INFO:pycr: Saving output table: data/demo_data_extended_processed.csv
     |    | group   |   rpl19 |   egf1r |   delta_ct |   delta_delta_ct |   fold_change |
     |---:|:--------|--------:|--------:|-----------:|-----------------:|--------------:|
