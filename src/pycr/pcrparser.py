@@ -1,3 +1,8 @@
+"""
+The PcrParser class creates a pipeline to automate the analysis of RNA levels detected by RT-PCR.
+RNA expression is calculated using the delta Ct method.
+"""
+    
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -10,39 +15,14 @@ LOGGER = logging.getLogger("pycr")
 
 
 class PcrParser:
-    """
-    The PcrParser class creates a pipeline to automate
-    the analysis of RNA levels detected by RT-PCR.
-    RNA expression is calculated using the delta Ct method.
-    """
 
     def __init__(
-        self, file_path: str, control: str, normalizer: str, target: str
-    ) -> None:
-        self.file_path = file_path
+        self, control: str, normalizer: str, target: str) -> None:
         self.control = control
         self.normalizer = normalizer
         self.target = target
 
-    def make_output_path(self) -> str:
-        """Create output path results"""
-
-        output_path = (
-            f"{Path(self.file_path).parents[0]}"
-            f"/{Path(self.file_path).stem}_processed"
-        )
-
-        return output_path
-
-    def load_table(self) -> pd.DataFrame:
-        """"Load input table"""
-
-        LOGGER.info(f" Loading table: {self.file_path}")
-        df = pd.read_csv(Path(self.file_path))
-
-        return df
-
-    def check_columns(self, df: pd.DataFrame) -> None:
+    def _check_columns(self, df: pd.DataFrame) -> None:
         """ "Check input table columns
 
         :param df: Raw ct values input table
@@ -70,6 +50,8 @@ class PcrParser:
         :rtype: pd.DataFrame
         """
 
+        _check_columns(df)
+        
         LOGGER.info(" Calculated delta delta ct...")
 
         df["delta_ct"] = df[self.target] - df[self.normalizer]
@@ -81,17 +63,6 @@ class PcrParser:
         df["fold_change"] = 2 ** (-df.delta_delta_ct)
 
         return df
-
-    @staticmethod
-    def save_table_to_csv(df: pd.DataFrame, output_path: str) -> IO:
-        """Save output file suffixed with "_processed.csv"""
-
-        output = output_path + ".csv"
-        LOGGER.info(
-            f" Saving output table: {output}"
-            f"\n {df.sample(10).sort_values(by ='group').to_markdown()} \n ...."
-        )
-        df.to_csv(output, index=False)
 
     def visualize_rt(self, df: pd.DataFrame, output_path: str) -> IO:
         """Visualization fold change in target gene expression"""
