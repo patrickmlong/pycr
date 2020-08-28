@@ -44,11 +44,11 @@ class PcrParser:
 
     def check_columns(self, df: pd.DataFrame) -> None:
         """ "Check input table columns
-        
+
         :param df: Raw ct values input table
-        :type df: pd.DataFrame           
+        :type df: pd.DataFrame
         :return: Exception if columns are not present otherwise None
-        :rtype: None 
+        :rtype: None
         """
 
         try:
@@ -67,7 +67,7 @@ class PcrParser:
         :param df: Raw ct values input dataframe
         :type df: pd.DataFrame
         :return:  delta delta ct table with fold change(s) in target gene expression
-        :rtype: pd.DataFrame     
+        :rtype: pd.DataFrame
         """
 
         LOGGER.info(" Calculated delta delta ct...")
