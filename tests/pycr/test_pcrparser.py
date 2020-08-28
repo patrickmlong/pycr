@@ -20,9 +20,9 @@ def test_check_columns():
         result = p.check_columns(df)
 
 
-def test_format_table():
+def test_calculate_ddct():
     """test final results of format table yield expected"""
 
     p = PcrParser(None, "control", "rpl19", "egf1r")
-    df_result = p.format_table(df_input)
+    df_result = p.calculate_ddct(df_input)
     assert_frame_equal(df_result, df_expected)
