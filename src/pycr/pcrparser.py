@@ -28,7 +28,7 @@ class PcrParser:
         """Create output path results
         
         Returns:
-            Str: save path for ddct analysis outputs
+            str: save path for ddct analysis outputs
         """
 
         output_path = (
