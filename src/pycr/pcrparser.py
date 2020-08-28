@@ -44,15 +44,11 @@ class PcrParser:
 
     def check_columns(self, df: pd.DataFrame) -> None:
         """ "Check input table columns
-
-        Parameters
-        __________
-        df : pd.DataFrame
-            Raw ct values input dataframe
-
-        Returns
-        _______
-        None
+        
+        :param df: Raw ct values input table
+        :type df: pd.DataFrame           
+        :return: Exception if columns are not present otherwise None
+        :rtype: None 
         """
 
         try:
@@ -68,15 +64,10 @@ class PcrParser:
     def calculate_ddct(self, df: pd.DataFrame) -> pd.DataFrame:
         """Calculate relative mRNA levels using delta delta ct
 
-        Parameters
-        __________
-        df : pd.DataFrame
-            Raw ct values input dataframe
-
-        Returns
-        _______
-        pd.DataFrame
-            delta delta ct table with fold change(s) in target gene expression
+        :param df: Raw ct values input dataframe
+        :type df: pd.DataFrame
+        :return:  delta delta ct table with fold change(s) in target gene expression
+        :rtype: pd.DataFrame     
         """
 
         LOGGER.info(" Calculated delta delta ct...")
