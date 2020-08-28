@@ -47,6 +47,7 @@ class PcrParser(object):
             logger.info("Columns: group, target, an/or normalizer not in table " \
                   f"columns:{df.columns}")
             #import pdb; pdb.set_trace()
+            raise
 
 
     def format_table(self, df: pd.DataFrame) -> pd.DataFrame:
