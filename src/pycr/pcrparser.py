@@ -71,7 +71,7 @@ class PcrParser:
                 f"columns:{df.columns}"
             )
             # import pdb; pdb.set_trace()
-           # raise KeyError
+            raise
 
     def calculate_ddct(self, df: pd.DataFrame) -> pd.DataFrame:
         """Calculate relative mRNA levels using delta delta ct
