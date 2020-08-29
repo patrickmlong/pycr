@@ -65,13 +65,13 @@ class PcrParser:
 
         try:
             df = df.loc[:, ["group", self.normalizer, self.target]]
-        except KeyError as error_info:
+        except KeyError:
             LOGGER.info(
-                f" Columns: group, target, an/or normalizer not in table "
+                f" KeyError. Columns: group, target, an/or normalizer not in table "
                 f"columns:{df.columns}"
             )
             # import pdb; pdb.set_trace()
-            raise KeyError
+           # raise KeyError
 
     def calculate_ddct(self, df: pd.DataFrame) -> pd.DataFrame:
         """Calculate relative mRNA levels using delta delta ct
