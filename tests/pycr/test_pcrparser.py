@@ -20,7 +20,7 @@ def test_check_columns():
         result = p.check_columns(df)
 
 
-def test_calculate_ddct(rna_parser):
+def test_calculate_ddct(rna_parser, df_input, df_expected):
     """test final results of format table yield expected"""
 
     df_result = rna_parser.calculate_ddct(df_input)
