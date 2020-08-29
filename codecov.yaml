@@ -1,2 +1,6 @@
 codecov:
   max_report_age: off
+  
+  
+ignore:
+  - "src/pycr/skeleton.py"
