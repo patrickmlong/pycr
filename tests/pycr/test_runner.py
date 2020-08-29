@@ -2,7 +2,7 @@ import pytest
 from pycr.runner import parse_args
 
 
-def test_runner():
+def test_arg_parse():
     args = parse_args(["expected_path", "expected_control", "expected_normalizer", "expected_target"])
     assert args.file_path == "expected_path"
     assert args.control == "expected_control"
