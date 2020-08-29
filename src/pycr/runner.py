@@ -1,3 +1,4 @@
+"""Command line entry point to run pcr from the terminal"""
 import argparse
 from pycr.pcrparser import PcrParser
 import sys
