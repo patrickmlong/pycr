@@ -5,6 +5,7 @@ conftest.py for pycr.
 """
 
 import pytest
+import pandas as pd
 import os
 from pycr.pcrparser import PcrParser
 
