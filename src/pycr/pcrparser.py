@@ -65,9 +65,9 @@ class PcrParser:
 
         try:
             df = df.loc[:, ["group", self.normalizer, self.target]]
-        except KeyError:
+        except KeyError as error_info:
             LOGGER.info(
-                " Columns: group, target, an/or normalizer not in table "
+                f" {error_info}. Columns: group, target, an/or normalizer not in table "
                 f"columns:{df.columns}"
             )
             # import pdb; pdb.set_trace()
