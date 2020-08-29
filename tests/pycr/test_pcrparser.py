@@ -6,6 +6,7 @@ from pycr.pcrparser import PcrParser
 
 # @pytest.mark.skip(reason="not yet written")
 def test_check_columns():
+    """Check that KeyError is raised with wrong input columns"""
     p = PcrParser.__new__(PcrParser)
     p.normalizer = "rpl19"
     p.target = "egf1r"
