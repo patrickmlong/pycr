@@ -12,12 +12,12 @@ from pycr.pcrparser import PcrParser
 
 cur_path = f"{os.path.dirname(__file__)}/pycr/data"
 
-
 @pytest.fixture(scope = "session")
 def df_input():
     df_input = pd.read_csv(f"{cur_path}/test_data.csv")
     return df_input
 
+@pytest.fixture(scope = "session")
 def df_expected():
     df_expected = pd.read_csv(f"{cur_path}/test_expected.csv")
     return df_expected
