@@ -1,8 +1,7 @@
 import pytest
 import pandas as pd
-from pycr.pcrparser import PcrParser
 from pandas._testing import assert_frame_equal
-
+from pycr.pcrparser import PcrParser
 
 
 # @pytest.mark.skip(reason="not yet written")
