@@ -1,9 +1,11 @@
 import pytest
-from pycr.pcrparser.runner import main as cl
+from pycr.runner import parse_args
 from pycr.pcrparser import PcrParser
 
 
 def test_runner():
-    p = PcrParser("expected_path", "expected_control", "expected_normalizer", "expected_target") 
-    parser = cl.(["expected_path", "expected_control", "expected_normalizer", "expected_target"])
-    self.assertTrue(parser.long)
+    args = parse_args(["expected_path", "expected_control", "expected_normalizer", "expected_target"])
+    assert args.file_path == "expected_path"
+    assert args.control == "expected_control"
+    assert args.normalizer == "expected_normalizer"
+    assert args.target == "expected_target"
