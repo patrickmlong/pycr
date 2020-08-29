@@ -13,10 +13,12 @@ cur_path = f"{os.path.dirname(__file__)}/pycr/data"
 
 @pytest.fixture(scope = "session")
 def df_input():
-    return df_input = pd.read_csv(f"{cur_path}/test_data.csv")
+    df_input = pd.read_csv(f"{cur_path}/test_data.csv")
+    return df_input
 
 def df_expected():
-    return df_expected = pd.read_csv(f"{cur_path}/test_expected.csv")
+    df_expected = pd.read_csv(f"{cur_path}/test_expected.csv")
+    return df_expected
 
 @pytest.fixture(scope = "session")
 def rna_parser():
