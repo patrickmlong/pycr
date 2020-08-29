@@ -1,6 +1,5 @@
 import pytest
 from pycr.runner import parse_args
-from pycr.pcrparser import PcrParser
 
 
 def test_runner():
