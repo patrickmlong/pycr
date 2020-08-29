@@ -12,7 +12,7 @@ def rna_parser():
 
     rna_parser = PcrParser(
     file_path = "./data/raw_data.csv",
-    control = "control"
+    control = "control",
     normalizer = "rpl19",
     target = "egf1r")
 
