@@ -9,7 +9,8 @@ def parse_args(args):
     Returns:
       :obj:`argparse.Namespace`: command line parameters namespace
     """    
-    parser = argparse.add_argument(
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
         "file_path",
         help="The path to raw ct data (csv) for relative RNA quantification",
         type=str,
