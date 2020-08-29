@@ -4,10 +4,10 @@ import pandas as pd
 from pandas._testing import assert_frame_equal
 import os
 
-# import test data
-cur_path = f"{os.path.dirname(__file__)}/data/"
-df_input = pd.read_csv(f"{cur_path}test_data.csv")
-df_expected = pd.read_csv(f"{cur_path}test_expected.csv")
+## import test data
+#cur_path = f"{os.path.dirname(__file__)}/data/"
+#df_input = pd.read_csv(f"{cur_path}test_data.csv")
+#df_expected = pd.read_csv(f"{cur_path}test_expected.csv")
 
 
 # @pytest.mark.skip(reason="not yet written")
