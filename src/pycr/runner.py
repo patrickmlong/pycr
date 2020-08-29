@@ -1,6 +1,6 @@
 import argparse
 from pycr.pcrparser import PcrParser
-
+import sys
 
 def parse_args(args):
     """Parse command line parameters
@@ -9,8 +9,7 @@ def parse_args(args):
     Returns:
       :obj:`argparse.Namespace`: command line parameters namespace
     """    
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
+    parser = argparse.add_argument(
         "file_path",
         help="The path to raw ct data (csv) for relative RNA quantification",
         type=str,
@@ -24,26 +23,15 @@ def parse_args(args):
     return parser.parse_args(args)      
         
 def main(args):
-    parser = argparse.ArgumentParser()
-    parser.add_argument(
-        "file_path",
-        help="The path to raw ct data (csv) for relative RNA quantification",
-        type=str,
-    )
     args = parse_args(args)
 
     rna_parser = PcrParser(args.file_path, args.control, args.normalizer, args.target)
 
     raw_table = rna_parser.load_table()
-    
     rna_parser.check_columns(raw_table)
-    
     ddct_table = rna_parser.calculate_ddct(raw_table)
-    
     output_path = rna_parser.make_output_path()
-    
     rna_parser.save_table_to_csv(ddct_table, output_path)
-    
     rna_parser.visualize_rt(ddct_table, output_path)
 
     
