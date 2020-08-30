@@ -1,5 +1,6 @@
 [![Documentation Status](https://readthedocs.org/projects/docs/badge/?version=latest)](https://pycr.readthedocs.io/en/latest/) Check out the [pycr documentation on ReadTheDocs](https://pycr.readthedocs.io/en/latest/).
 <br> [![codecov](https://codecov.io/gh/pkmklong/pycr/branch/master/graph/badge.svg)](https://codecov.io/gh/pkmklong/pycr)
+<a href="https://github.com/Cay-Zhang/SwiftSpeech/blob/master/LICENSE"><img src="http://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat"></a>
 
 
 
