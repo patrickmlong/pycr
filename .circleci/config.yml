@@ -7,8 +7,10 @@ jobs:
         - checkout  # checkout source code to working directory
         - run:
             command: |
-              python -m pip install git+https://github.com/pkmklong/pycr.git
-              pycr -h
+              python -m pip install venv
+              python -m venv env
+              . env/bin/activate
+              python setup.py
 workflows:
   integration:
     jobs:
