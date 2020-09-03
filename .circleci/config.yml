@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-    build_test:
+    build:
       docker:
       - image: circleci/python:3.6.4
       steps:
@@ -8,9 +8,8 @@ jobs:
         - run:
             command: |
               python -m pip install git+https://github.com/pkmklong/pycr.git
-              python -m pip install pytest
-              pytest
+              pycr -h
 workflows:
   integration:
     jobs:
-      - build_test
+      - build
