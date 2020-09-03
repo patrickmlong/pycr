@@ -11,7 +11,7 @@ jobs:
               source env/bin/activate
               python -m pip install --upgrade setuptools
               python -m pip install wheel
-              python setup.py
+              python setup.py install
 workflows:
   integration:
     jobs:
