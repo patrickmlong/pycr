@@ -8,6 +8,8 @@ jobs:
       - run:
           command: |
             python -m pip install git+https://github.com/pkmklong/pycr.git
+            python -m pip install pytest
+            pyest
 workflows:
   # Name the workflow "welcome"
   welcome:
