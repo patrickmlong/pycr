@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  build_test:
       docker:
       - image: circleci/python:3.6.4
     steps:
@@ -9,10 +9,10 @@ jobs:
           command: |
             python -m pip install git+https://github.com/pkmklong/pycr.git
             python -m pip install pytest
-            pyest
+            pytest
 workflows:
   # Name the workflow "welcome"
   welcome:
     # Run the welcome/run job in its own container
     jobs:
-      - build
+      - build_test
