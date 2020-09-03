@@ -9,7 +9,7 @@ jobs:
             command: |
               python -m pip install virtualenv
               python -m venv env
-              . env/bin/activate
+              source env/bin/activate
               python setup.py
 workflows:
   integration:
