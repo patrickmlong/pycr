@@ -7,7 +7,7 @@ jobs:
         - checkout  # checkout source code to working directory
         - run:
             command: |
-              python -m pip install git+https://github.com/pkmklong/pycr.git
+              sudo python -m pip install git+https://github.com/pkmklong/pycr.git
               pycr -h
 workflows:
   integration:
