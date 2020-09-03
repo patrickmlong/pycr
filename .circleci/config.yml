@@ -7,7 +7,7 @@ jobs:
         - checkout  # checkout source code to working directory
         - run:
             command: |
-              python -m pip install venv
+              python -m pip install virtualenv
               python -m venv env
               . env/bin/activate
               python setup.py
