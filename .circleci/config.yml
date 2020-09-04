@@ -12,6 +12,7 @@ jobs:
               python -m pip install --upgrade setuptools
               python -m pip install wheel
               python setup.py install
+              pycr -h
 workflows:
   integration:
     jobs:
