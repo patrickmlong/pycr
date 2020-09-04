@@ -7,7 +7,7 @@ defaults: &defaults
 version: 2.1
 jobs:
     build:
-    <<: *defaults
+      <<: *defaults
       steps:
         - checkout  # checkout source code to working directory
         - run:
