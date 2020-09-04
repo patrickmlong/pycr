@@ -1,8 +1,13 @@
+# .circleci/config.yml
+defaults: &defaults
+  docker:
+    - image: ircleci/python:3.6.4
+  working_directory: ~/project
+  
 version: 2.1
 jobs:
     build:
-      docker:
-      - image: circleci/python:3.6.4
+    <<: *defaults
       steps:
         - checkout  # checkout source code to working directory
         - run:
