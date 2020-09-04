@@ -72,6 +72,10 @@ Demo::
 .. image:: https://codecov.io/gh/pkmklong/pycr/branch/master/graph/badge.svg
   :target: https://codecov.io/gh/pkmklong/pycr
   
+.. image:: https://circleci.com/gh/pkmklong/pycr.svg?style=shield
+    :target: https://app.circleci.com/pipelines/github/pkmklong
+
+  
 .. include:: isogrk1.txt
 
 
