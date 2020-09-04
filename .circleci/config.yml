@@ -13,7 +13,7 @@ jobs:
               python -m pip install wheel pytest
               python setup.py install
               pycr -h
-              pytest
+              pytest .
 workflows:
   integration:
     jobs:
