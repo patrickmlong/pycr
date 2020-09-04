@@ -1,7 +1,6 @@
 [![Documentation Status](https://readthedocs.org/projects/docs/badge/?version=latest)](https://pycr.readthedocs.io/en/latest/) Check out the [pycr documentation on ReadTheDocs](https://pycr.readthedocs.io/en/latest/).
 <br> [![codecov](https://codecov.io/gh/pkmklong/pycr/branch/master/graph/badge.svg)](https://codecov.io/gh/pkmklong/pycr)
-
-
+[![<ORG_NAME>](https://circleci.com/gh/pkmklong/pycr.svg?style=shield)](https://app.circleci.com/pipelines/github/pkmklong)
 
 pycr
 ====
