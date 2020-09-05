@@ -15,11 +15,28 @@ jobs:
               python -m venv env
               source env/bin/activate
               python -m pip install --upgrade setuptools
-              python -m pip install wheel pytest pytest-cov
+              python -m pip install wheel
               python setup.py install
+        - save_cache:
+             key: "py-packages"
+             paths: 
+                - /home/circleci/project/env/lib/python3.6/site-packages
+    test:          
+      <<: *defaults
+      steps:
+        - checkout  # checkout source code to working directory
+        - restore_cache:
+             keys:
+               - "py-packages"
+        - run:
+            command: |
+              python -m pip install pytest pytest-cov
               pycr -h
               pytest .
 workflows:
   integration:
     jobs:
       - build
+      - test:
+          requires:
+              - build
