@@ -19,3 +19,29 @@ workflows:
   main:
     jobs:
       - build-and-test
+      
+ # .circleci/config.yml
+defaults: &defaults
+  docker:
+    - image: circleci/python:3.6.4
+  working_directory: ~/project
+  
+version: 2.1
+jobs:
+    build:
+      <<: *defaults
+      steps:
+        - checkout  # checkout source code to working directory
+        - run:
+            command: |
+              python -m venv env
+              source env/bin/activate
+              python -m pip install --upgrade setuptools
+              python -m pip install wheel pytest pytest-cov
+              python setup.py install
+              pycr -h
+              pytest .
+workflows:
+  integration:
+    jobs:
+      - build
