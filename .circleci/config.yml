@@ -20,8 +20,7 @@ jobs:
         - save_cache:
              key: "py-packages"
              paths: 
-                - /home/circleci/project/env/lib/python3.6/site-packages
-                - /home/circleci/project/env/
+                - /usr/local/lib/python3.6/site-packages/
     test:          
       <<: *defaults
       steps:
