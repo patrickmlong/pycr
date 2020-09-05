@@ -27,7 +27,7 @@ jobs:
         - checkout  # checkout source code to working directory
         - restore_cache:
              keys:
-               - "build_dependencies"
+               - "build_deps"
         - run:
             command: |
               source /root/.env/bin/activate
@@ -38,7 +38,7 @@ jobs:
         - checkout  # checkout source code to working directory
         - restore_cache:
              keys:
-               - "build_dependencies"
+               - "build_deps"
         - run:
             command: |
               source /root/.env/bin/activate
