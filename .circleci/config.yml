@@ -33,9 +33,6 @@ jobs:
                - "py-packages"
         - run:
             command: |
-              pwd 
-              ls
-              pycr -h
               pytest .
 workflows:
   integration:
