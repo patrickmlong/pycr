@@ -1,7 +1,7 @@
 # .circleci/config.yml
 defaults: &defaults
   docker:
-    - image: circleci/python:3.6.4
+    - image: python:3.8
   working_directory: ~/project
   
 version: 2.1
@@ -12,7 +12,6 @@ jobs:
         - checkout  # checkout source code to working directory
         - run:
             command: |
-              chown -R $USER:$USER /usr/local/lib/python3.6/site-packages/*
               python -m pip install --user --upgrade setuptools
               python -m pip install --user wheel pytest pytest-cov
               python setup.py install
@@ -31,7 +30,6 @@ jobs:
                - "py-packages"
         - run:
             command: |
-              chown -R $USER:$USER /usr/local/lib/python3.6/site-packages/
               python -m pip install --user pytest pytest-cov
               pytest .
 workflows:
