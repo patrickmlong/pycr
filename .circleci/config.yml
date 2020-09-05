@@ -12,7 +12,13 @@ jobs:
         - checkout  # checkout source code to working directory
         - run:
             command: |
-              python setup.py install 
+              python -m venv env
+              source env/bin/activate
+              python -m pip install --upgrade setuptools
+              python -m pip install wheel pytest pytest-cov
+              python setup.py install
+              pycr -h
+              pytest .
         - save_cache:
              key: "py-packages"
              paths: 
@@ -26,7 +32,9 @@ jobs:
                - "py-packages"
         - run:
             command: |
-              sudo python -m pip install pytest pytest-cov
+              pwd 
+              ls
+              source env/bin/activate
               pycr -h
               pytest .
 workflows:
