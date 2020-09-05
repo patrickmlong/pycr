@@ -16,7 +16,7 @@ jobs:
               python -m pip install wheel
               pwd
               ls
-              python setup.py install
+              python -m pip install .
         - save_cache:
              key: "py-packages"
              paths: 
