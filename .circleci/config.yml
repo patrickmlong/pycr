@@ -12,11 +12,7 @@ jobs:
         - checkout  # checkout source code to working directory
         - run:
             command: |
-              python -m pip install --upgrade setuptools
-              python -m pip install wheel
-              pwd
-              ls
-              python -m pip install .
+              python -m pip install git+https://github.com/pkmklong/pycr.git
         - save_cache:
              key: "py-packages"
              paths: 
