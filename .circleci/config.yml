@@ -12,10 +12,8 @@ jobs:
         - checkout  # checkout source code to working directory
         - run:
             command: |
-              python -m venv env
-              source env/bin/activate
-              python -m pip install --upgrade setuptools
-              python -m pip install wheel pytest pytest-cov
+              python -m pip install --user --upgrade setuptools
+              python -m pip install --user wheel pytest pytest-cov
               python setup.py install
               pycr -h
               pytest .
@@ -33,7 +31,7 @@ jobs:
                - "py-packages"
         - run:
             command: |
-              python -m pip install pytest pytest-cov
+              python -m pip install --user pytest pytest-cov
               pytest .
 workflows:
   integration:
