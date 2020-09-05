@@ -35,7 +35,7 @@ jobs:
             command: |
               pwd 
               ls
-              source env/bin/activate
+              source /home/circleci/project/env/activate
               pycr -h
               pytest .
 workflows:
