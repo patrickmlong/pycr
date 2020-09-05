@@ -12,7 +12,7 @@ jobs:
         - checkout  # checkout source code to working directory
         - run:
             command: |
-              sudo python setup.py install 
+              python setup.py install 
         - save_cache:
              key: "py-packages"
              paths: 
