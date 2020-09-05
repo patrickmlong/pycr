@@ -34,6 +34,7 @@ jobs:
             command: |
               pwd 
               ls
+              ls env/bin/activate
               source env/bin/activate
               pycr -h
               pytest .
