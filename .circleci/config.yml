@@ -13,6 +13,7 @@ jobs:
         - run:
             command: |
               chown -R $USER:$USER /usr/local/lib/python3.6/site-packages/
+              chown -R $USER:$USER /usr/local/lib/python3.6/site-packages/test-easy-install-65.write-test
               python -m pip install --user --upgrade setuptools
               python -m pip install --user wheel pytest pytest-cov
               python setup.py install
