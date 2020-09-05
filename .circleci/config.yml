@@ -14,6 +14,8 @@ jobs:
             command: |
               python -m pip install --upgrade setuptools
               python -m pip install wheel
+              pwd
+              ls
               python setup.py install
         - save_cache:
              key: "py-packages"
