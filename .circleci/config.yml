@@ -30,7 +30,7 @@ jobs:
                - "py-packages"
         - run:
             command: |
-              python -m pip install pytest pytest-cov
+              sudo python -m pip install pytest pytest-cov
               pycr -h
               pytest .
 workflows:
