@@ -17,8 +17,6 @@ jobs:
               python -m pip install --upgrade setuptools
               python -m pip install wheel pytest pytest-cov
               python setup.py install
-              pycr -h
-              pytest .
         - save_cache:
              key: "dependencies"
              paths: 
