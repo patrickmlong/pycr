@@ -23,7 +23,7 @@ jobs:
              key: "py-packages"
              paths: 
                 - /home/circleci/project/env/lib/python3.6/site-packages
-                - /home/circleci/project/env/bin
+                - /home/circleci/project/env/
     test:          
       <<: *defaults
       steps:
@@ -35,7 +35,6 @@ jobs:
             command: |
               pwd 
               ls
-              ls env/bin/
               source env/bin/activate
               pycr -h
               pytest .
