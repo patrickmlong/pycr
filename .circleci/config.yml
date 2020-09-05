@@ -12,15 +12,13 @@ jobs:
         - checkout  # checkout source code to working directory
         - run:
             command: |
-              python -m venv env
-              source env/bin/activate
               python -m pip install --upgrade setuptools
               python -m pip install wheel
               python setup.py install
         - save_cache:
              key: "py-packages"
              paths: 
-                - /home/circleci/project/env/lib/python3.6/site-packages
+                - /home/circleci/project/lib/python3.6/site-packages
     test:          
       <<: *defaults
       steps:
@@ -30,7 +28,6 @@ jobs:
                - "py-packages"
         - run:
             command: |
-              source env/bin/activate
               python -m pip install pytest pytest-cov
               pycr -h
               pytest .
