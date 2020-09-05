@@ -17,7 +17,7 @@ jobs:
               python -m pip install pytest pytest-cov
               python setup.py install
         - save_cache:
-             key: "build_dependencies"
+             key: "build_deps"
              paths: 
                 - /root/.env/lib/python3.8/site-packages
                 - /root/.env
@@ -42,6 +42,7 @@ jobs:
         - run:
             command: |
               source /root/.env/bin/activate
+              pycr -h
               pycr  ./data/demo_data_extended.csv control rpl19 egf1r             
 workflows:
   integration:
