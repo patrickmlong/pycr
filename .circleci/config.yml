@@ -33,6 +33,7 @@ jobs:
                - "py-packages"
         - run:
             command: |
+              python -m pip install pytest pytest-cov
               pytest .
 workflows:
   integration:
