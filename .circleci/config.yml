@@ -23,6 +23,7 @@ jobs:
              key: "py-packages"
              paths: 
                 - /home/circleci/project/env/lib/python3.6/site-packages
+                - /home/circleci/project/env/bin
     test:          
       <<: *defaults
       steps:
