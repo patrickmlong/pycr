@@ -12,8 +12,8 @@ jobs:
         - checkout  # checkout source code to working directory
         - run:
             command: |
-              python -m venv env
-              source env/bin/activate
+              python -m venv /root/.env
+              source /root/.env/bin/activate
               python -m pip install --upgrade setuptools
               python -m pip install wheel pytest pytest-cov
               python setup.py install
@@ -22,8 +22,8 @@ jobs:
         - save_cache:
              key: "py-dependencies"
              paths: 
-                - /root/project/env/lib/python3.8/site-packages
-                - /root/project/env/bin
+                - /root/.env/lib/python3.8/site-packages
+                - /root/.env
     test:          
       <<: *defaults
       steps:
@@ -33,7 +33,7 @@ jobs:
                - "py-dependencies"
         - run:
             command: |
-              source env/bin/activate
+              source /root/.env/bin/activate
               pytest .
 workflows:
   integration:
