@@ -1,7 +1,7 @@
 # .circleci/config.yml
 defaults: &defaults
   docker:
-    - image: circleci/python@0.2.1
+    - image: circleci/python:3.6.4
   working_directory: ~/project
   
 version: 2.1
