@@ -20,7 +20,7 @@ jobs:
               pycr -h
               pytest .
         - save_cache:
-             key: "py-dependencies"
+             key: "dependencies"
              paths: 
                 - /root/.env/lib/python3.8/site-packages
                 - /root/.env
@@ -30,7 +30,7 @@ jobs:
         - checkout  # checkout source code to working directory
         - restore_cache:
              keys:
-               - "py-dependencies"
+               - "dependencies"
         - run:
             command: |
               source /root/.env/bin/activate
