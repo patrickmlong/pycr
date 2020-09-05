@@ -31,7 +31,18 @@ jobs:
         - run:
             command: |
               source /root/.env/bin/activate
-              pytest .
+              pytest .            
+    demo:          
+      <<: *defaults
+      steps:
+        - checkout  # checkout source code to working directory
+        - restore_cache:
+             keys:
+               - "build_dependencies"
+        - run:
+            command: |
+              source /root/.env/bin/activate
+              pycr  ./data/demo_data_extended.csv control rpl19 egf1r             
 workflows:
   integration:
     jobs:
@@ -39,3 +50,6 @@ workflows:
       - test:
           requires:
               - build
+      - demo:
+          requires:
+              - build        
