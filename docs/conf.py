@@ -55,7 +55,7 @@ html_theme = 'default'
 # so a file named "default.css" will overwrite the builtin "default.css".
 html_static_path = ['_static']
 
-html_logo = "../images/pycr_logo.png"
+html_logo = 'pycr_logo.png'
 html_theme_options = {
     'logo_only': True,
     'display_version': False,
