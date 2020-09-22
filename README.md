@@ -72,3 +72,10 @@ Note
 
 This project has been set up using PyScaffold 3.1. For details and usage
 information on PyScaffold see https://pyscaffold.org/.
+
+TODO: 
+* add feature to flag normalizer gene outliers (> 2 SD from mean) in ddct table
+* produce visuals +/- outliers
+* add a normality test
+* generate outputs expressed as % change and run two-sided t-test
+* generate outputs expressed as % change and run nonparametric two sample test
