@@ -155,32 +155,32 @@ class PcrParser:
         labelrotation = 45
         
         sns.boxplot(
-            x="group", y="fold_change", data=df, ax=axes[0], width=width, palette=palette
+            x="group", y="fold_change", data=df, ax=axes[0,0], width=width, palette=palette
         )
         sns.swarmplot(x="group", y="fold_change", data=df, ax=axes[0], color=color)
-        axes[0].set_ylabel(f"{self.target} Fold Change")
-        axes[0].tick_params(labelrotation=labelrotation)  
+        axes[0,0].set_ylabel(f"{self.target} Fold Change")
+        axes[0,0].tick_params(labelrotation=labelrotation)  
         
         sns.boxplot(
-            x="group", y="percent_expression", data=df, ax=axes[1], width=width, palette=palette
+            x="group", y="percent_expression", data=df, ax=axes[0,1], width=width, palette=palette
         )
-        sns.swarmplot(x="group", y="percent_expression", data=df, ax=axes[1], color=color)
-        axes[1].set_ylabel(f"{self.target} Percent Expression")
-        axes[1].tick_params(labelrotation=labelrotation)  
+        sns.swarmplot(x="group", y="percent_expression", data=df, ax=axes[0,1], color=color)
+        axes[0,1].set_ylabel(f"{self.target} Percent Expression")
+        axes[0,1].tick_params(labelrotation=labelrotation)  
         
         sns.boxplot(
-            x="group", y=self.target, data=df, ax=axes[2], width=width, palette=palette
+            x="group", y=self.target, data=df, ax=axes[1,0], width=width, palette=palette
         )
-        sns.swarmplot(x="group", y=self.target, data=df, ax=axes[2], color=color)
-        axes[2].set_ylabel(f"{self.target} ct values")
-        axes[2].tick_params(labelrotation=labelrotation)
+        sns.swarmplot(x="group", y=self.target, data=df, ax=axes[1,0], color=color)
+        axes[1,0].set_ylabel(f"{self.target} ct values")
+        axes[1,0].tick_params(labelrotation=labelrotation)
         
         sns.boxplot(
-            x="group", y=self.normalizer, data=df, ax=axes[3], width=width, palette=palette
+            x="group", y=self.normalizer, data=df, ax=axes[1,1], width=width, palette=palette
         )
-        sns.swarmplot(x="group", y=self.normalizer, data=df, ax=axes[3], color=color)
-        axes[3].set_ylabel(f"{self.normalizer} ct values")
-        axes[3].tick_params(labelrotation=labelrotation)
+        sns.swarmplot(x="group", y=self.normalizer, data=df, ax=axes[1,1], color=color)
+        axes[1,1].set_ylabel(f"{self.normalizer} ct values")
+        axes[1,1].tick_params(labelrotation=labelrotation)
         
         plt.tight_layout()
         sns.despine(left=True)
