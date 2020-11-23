@@ -157,7 +157,7 @@ class PcrParser:
         sns.boxplot(
             x="group", y="fold_change", data=df, ax=axes[0,0], width=width, palette=palette
         )
-        sns.swarmplot(x="group", y="fold_change", data=df, ax=axes[0], color=color)
+        sns.swarmplot(x="group", y="fold_change", data=df, ax=axes[0,0], color=color)
         axes[0,0].set_ylabel(f"{self.target} Fold Change")
         axes[0,0].tick_params(labelrotation=labelrotation)  
         
