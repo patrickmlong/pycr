@@ -146,7 +146,7 @@ class PcrParser:
         output = output_path + ".png"
         LOGGER.info(f" Saving output figure: {output}")
 
-        figure, axes = plt.subplots(2, 2)
+        figure, axes = plt.subplots(1, 2)
         sns.set(style="white")
 
         sns.boxplot(
