@@ -95,7 +95,7 @@ class PcrParser:
 
         return df
 
-    def calculate_ddct(self, df: pd.DataFrame) -> pd.DataFrame:
+    def calculate_percent_expression(self, df: pd.DataFrame) -> pd.DataFrame:
         
         df["delta_ct"] = df[self.target] - df[self.normalizer]
         df["expression"] = df.delta_ct.apply(lambda x: -2**(-x)) 
