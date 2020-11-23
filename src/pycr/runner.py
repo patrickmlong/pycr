@@ -34,9 +34,10 @@ def main(args):
     raw_table = rna_parser.load_table()
     rna_parser.check_columns(raw_table)
     ddct_table = rna_parser.calculate_ddct(raw_table)
+    ddct_perc_table  = calculate_percent_expression(ddct_table_
     output_path = rna_parser.make_output_path()
-    rna_parser.save_table_to_csv(ddct_table, output_path)
-    rna_parser.visualize_rt(ddct_table, output_path)
+    rna_parser.save_table_to_csv(ddct_perc_table, output_path)
+    rna_parser.visualize_rt(ddct_perc_table, output_path)
 
 
 def run():
