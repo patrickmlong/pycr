@@ -95,6 +95,16 @@ class PcrParser:
 
         return df
 
+    def calculate_ddct(self, df: pd.DataFrame) -> pd.DataFrame:
+        
+        df["delta_ct"] = df[self.target] - df[self.normalizer]
+        df["expression"] = df.delta_ct.apply(lambda x: -2**(-x)) 
+        df["average_expression"] = df[df.group == self.control].expression.mean()
+        df["percent_expression"] = (df.expression / df.average_expression) * 100
+
+        return df
+    
+
     @staticmethod
     def save_table_to_csv(df: pd.DataFrame, output_path: str) -> IO:
         """Save output file suffixed with "_processed.csv
@@ -133,17 +143,17 @@ class PcrParser:
         output = output_path + ".png"
         LOGGER.info(f" Saving output figure: {output}")
 
-        figure, axes = plt.subplots(1, 2)
+        figure, axes = plt.subplots(2, 2)
         sns.set(style="white")
 
         sns.boxplot(
             x="group", y="fold_change", data=df, ax=axes[0], width=0.5, palette="GnBu"
         )
+        sns.swarmplot(x="group", y="fold_change", data=df, ax=axes[0], color=".25")
+        
         sns.boxplot(
             x="group", y=self.normalizer, data=df, ax=axes[1], width=0.5, palette="GnBu"
         )
-
-        sns.swarmplot(x="group", y="fold_change", data=df, ax=axes[0], color=".25")
         sns.swarmplot(x="group", y=self.normalizer, data=df, ax=axes[1], color=".25")
 
         plt.tight_layout()
@@ -151,5 +161,7 @@ class PcrParser:
         axes[0].set_ylabel(f"{self.target} fold change")
         axes[1].set_ylabel(f"{self.normalizer} ct values")
         axes[0].tick_params(labelrotation=45)
-        axes[1].tick_params(labelrotation=45)
+        axes[1].tick_params(labelrotation=45)  
+        
         figure.savefig(output, dpi=300, bbox_inches="tight")
+
