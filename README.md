@@ -64,7 +64,7 @@ user defined normalizing column:    float   ct values of normalizing reference t
 
 <b>Visuals</b>
 
-<img src="https://github.com/pkmklong/pycr/blob/master/images/demo_data_extended_processed.png" height="400"  class="center" title="Demo visualization">
+<img src="https://github.com/pkmklong/pycr/blob/master/images/demo_image.png" height="400"  class="center" title="Demo visualization">
 
 
 Note
