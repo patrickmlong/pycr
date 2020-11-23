@@ -97,11 +97,14 @@ class PcrParser:
 
     def calculate_percent_expression(self, df: pd.DataFrame) -> pd.DataFrame:
         
-        df["delta_ct"] = df[self.target] - df[self.normalizer]
-        df["expression"] = df.delta_ct.apply(lambda x: -2**(-x)) 
+        LOGGER.info(" Calculated percent change...")
+        #df["delta_ct"] = df[self.target] - df[self.normalizer]
+        df["expression"] = -(2 ** (-df.delta_delta_ct))
         df["average_expression"] = df[df.group == self.control].expression.mean()
         df["percent_expression"] = (df.expression / df.average_expression) * 100
 
+        LOGGER.info(df.columns)
+        
         return df
     
 
