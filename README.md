@@ -4,7 +4,7 @@
 
 pycr
 ====
-A quick and simple python utility to automate delta delta ct [relative quantification of mRNA](https://en.wikipedia.org/wiki/Real-time_polymerase_chain_reaction) from thermocycler ct data. Assumes perfect amplification efficiency and unpaired samples.
+A simple constrained-scope python utility to automate delta delta ct [relative quantification of mRNA](https://en.wikipedia.org/wiki/Real-time_polymerase_chain_reaction) from thermocycler ct data. Assumes perfect amplification efficiency and unpaired samples. Useful automation for repeatitive QPCR analyses for grad students/postdocs. 
 
 <b>Installation</b>
 
